@@ -3,13 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Home Page/index.css" />
     <title>Home Page</title>
   </head>
   <body>
     <nav id="navbar"></nav>
-    <div id="banner">
-      <img id="banner-img" src="" alt="banner-img" />
-    </div>
+    <section id="hero-section">
+      <div id="banner">
+        <img
+          class="banner-img"
+          src="/banner images/keyboard sale - switchCraft.png"
+          alt="Keyboard sale"
+        />
+      </div>
+      <div id="dot-container">
+        <span class="dot active" onclick="bannerImgSelector('1')"></span>
+        <span class="dot" onclick="bannerImgSelector('2')"></span>
+        <span class="dot" onclick="bannerImgSelector('3')"></span>
+      </div>
+    </section>
     <footer id="footer"></footer>
 
     <!-- Kini nga script, for fetching the navigation bar and footer ra hehe :) -->
@@ -33,5 +45,7 @@
         .then((x) => x.text())
         .then((y) => (document.getElementById("footer").innerHTML = y));
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/Home Page/index.js"></script>
   </body>
 </html>

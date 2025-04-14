@@ -1,0 +1,33 @@
+body {
+  background-color: #ededed;
+}
+
+#hero-section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.banner-img {
+  width: 100%;
+  aspect-ratio: 4 / 1;
+}
+
+#dot-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(212, 212, 212);
+}
+
+.active {
+  background-color: grey;
+}
