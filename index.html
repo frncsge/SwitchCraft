@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <h1>this is the homepage</h1>
+    <footer id="footer"></footer>
+
+    <!-- Kini nga script, for fetching the navigation bar and footer ra hehe :) -->
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("navbar").innerHTML = y;
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((x) => x.text())
+        .then((y) => (document.getElementById("footer").innerHTML = y));
+    </script>
+  </body>
+</html>
