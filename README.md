@@ -5,7 +5,7 @@ SwitchCraft is a front-end only e-commerce website that sells keyboard related p
 # Purpose
 
 Final project for my Integrative Programming and Technologies 101 (IPT101) course.
-Tools used are: Html, Css, and JavaScript.
+Tools used are: Html, Css, JavaScript, Git, and Github.
 
 # Developed by
 
