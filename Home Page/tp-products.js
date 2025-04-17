@@ -3,7 +3,7 @@
 export const tpProducts = [
   {
     img: "url",
-    name: "Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in White and Blue",
+    name: "Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in Black",
     price: "1,116",
     rating: 4.8,
     sold: 181,
