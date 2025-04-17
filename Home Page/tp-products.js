@@ -4,7 +4,7 @@ export const tpProducts = [
   {
     img: "/Home Page/product img/aula f75.png",
     name: "Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in Black",
-    price: "1,116",
+    price: "3,116",
     rating: 4.8,
     sold: 181,
     reviewCount: 2,
@@ -29,6 +29,36 @@ export const tpProducts = [
       "Anti-Ghosting & N-Key Rollover – Ensures every keystroke is registered, even during intense gaming.",
       "Detachable USB-C Cable – Easy to replace and store.",
       "Wide Compatibility – Works with Windows, macOS, and Linux.",
+    ],
+  },
+  {
+    img: "/Home Page/product img/XVX PBT Keycaps.jpg",
+    name: "XVX PBT Keycaps 60 Percent, Great Wave  of Kanagawa",
+    price: "3,987",
+    rating: 5.0,
+    sold: 4,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Raynan R.",
+        feedback: "overpriced pero worth it pa din",
+      },
+      {
+        reviewer: "MoonKnight",
+        feedback: "worth the price! aesthetic wise, 100%!",
+      },
+    ],
+    description:
+      "The XVX PBT Keycaps (60%) – Great Wave off Kanagawa edition – combine traditional Japanese art with premium build quality for a truly unique typing experience. Crafted from durable PBT material with dye-sublimated legends, these keycaps deliver lasting beauty and performance for mechanical keyboard enthusiasts.",
+    features: [
+      "Artistic Design – Features the iconic Great Wave off Kanagawa for a visually striking look.",
+      "High-Quality PBT – Made from thick, wear-resistant PBT plastic for long-lasting durability.",
+      "Dye-Sublimated Legends – Crisp, fade-resistant legends that stay sharp over time.",
+      "60% Layout Compatibility – Designed to fit most 60% mechanical keyboards.",
+      "OEM Profile – Offers a comfortable and familiar typing experience.",
+      "Easy Installation – Comes with a keycap puller for quick and simple customization.",
+      "Universal Fit – Compatible with Cherry MX switches and MX-style clones.",
+      "No Backlight Interference – Solid top design for a clean, classic aesthetic without shine-through.",
     ],
   },
 ];
