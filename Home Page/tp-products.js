@@ -2,6 +2,7 @@
 
 export const tpProducts = [
   {
+    class: "keyboard",
     img: "/Home Page/product img/aula f75.png",
     name: "Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in Black",
     price: "3,116",
@@ -32,10 +33,11 @@ export const tpProducts = [
     ],
   },
   {
+    class: "keycap",
     img: "/Home Page/product img/XVX PBT Keycaps.jpg",
     name: "XVX PBT Keycaps 60 Percent, Great Wave  of Kanagawa",
     price: "3,987",
-    rating: 5.0,
+    rating: 4.9,
     sold: 4,
     reviewCount: 2,
     reviews: [
