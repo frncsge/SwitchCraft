@@ -4,12 +4,14 @@ import { tpProducts } from "./tp-products.js";
 
 tpProducts.forEach(function (product) {
   //product card template that i made and will be used to dynamically add top picks products
-  const productCard = `<div class="product-card">
+  const productCard = `<div class="product-card" data-id="${product.id}">
           <div class="product-img-container">
             <img class="product-img" src="${product.img}" alt="Product Image" />
           </div>
-          <p class="product-name">${product.name}</p>
-          <p class="product-price">${product.price}</p>
+          <div class="product-name-container">
+            <p class="product-name">${product.name}</p>
+          </div>
+          <p class="product-price">Php ${product.price}</p>
           <div class="rating-sold-container">
             <div class="rating-container">
               <img
@@ -44,3 +46,9 @@ tpProducts.forEach(function (product) {
   const topPicksProductsContainer = $("#top-picks-products-container");
   topPicksProductsContainer.append(productCard);
 });
+
+//event delegation para ma target ang mga product cards inside the top picks products container
+// $("#top-picks-products-container").on("click", ".product-card", function () {
+//   const productId = $(this).data("id"); //kuhaon ang data-id sa clicked product
+//   // window.location.href = `/trial.html?id=${productId}`;
+// });

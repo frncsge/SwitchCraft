@@ -2,6 +2,7 @@
 
 export const tpProducts = [
   {
+    id: "aulaf75",
     class: "keyboard",
     img: "/Home Page/product img/aula f75.png",
     name: "Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in Black",
@@ -33,6 +34,7 @@ export const tpProducts = [
     ],
   },
   {
+    id: "xvxpbtkeycaps",
     class: "keycap",
     img: "/Home Page/product img/XVX PBT Keycaps.jpg",
     name: "XVX PBT Keycaps 60 Percent, Great Wave  of Kanagawa",
@@ -61,6 +63,200 @@ export const tpProducts = [
       "Easy Installation – Comes with a keycap puller for quick and simple customization.",
       "Universal Fit – Compatible with Cherry MX switches and MX-style clones.",
       "No Backlight Interference – Solid top design for a clean, classic aesthetic without shine-through.",
+    ],
+  },
+  {
+    id: "royalkludgerkm75",
+    class: "keyboard",
+    img: "/Home Page/product img/Royal Kludge RKM75.jpg",
+    name: "Royal Kludge RKM75 75% 2.4GHz Wireless Bluetooth Mechanical Keyboard",
+    price: "4,150",
+    rating: 5.0,
+    sold: 10,
+    reviewCount: 1,
+    reviews: [
+      {
+        reviewer: "Herro T.",
+        feedback: "nice keyboard",
+      },
+    ],
+    description:
+      "The Royal Kludge RKM75 – a compact 75% wireless mechanical keyboard – blends modern functionality with a sleek design tailored for gamers and professionals alike. Featuring hot-swappable switches, triple-mode connectivity, and vibrant RGB lighting, the RKM75 offers an ultra-versatile and customizable typing experience.",
+    features: [
+      "75% Layout – Space-saving design with essential keys for a streamlined setup.",
+      "Hot-Swappable Switches – Easily swap out mechanical switches without soldering.",
+      "Triple-Mode Connectivity – Switch seamlessly between Bluetooth 5.0, 2.4GHz wireless, and USB-C wired modes.",
+      "RGB Backlighting – Dynamic RGB effects with customizable lighting for personalized flair.",
+      "PBT Keycaps – High-quality, wear-resistant keycaps for durability and a premium feel.",
+      "Long Battery Life – Rechargeable battery supports extended wireless use with efficient power management.",
+      "Windows & Mac Compatibility – Easily toggle layouts to suit different operating systems.",
+      "Detachable USB-C Cable – Fast, reliable wired connection and easy portability.",
+      "Compact and Portable – Lightweight build perfect for gaming setups or on-the-go productivity.",
+    ],
+  },
+  {
+    id: "razermechanicalswitches",
+    class: "switch",
+    img: "/Home Page/product img/Razer Mechanical Swtiches.jpg",
+    name: "Razer Mechanical Switches Gen 3 - Orange Tactile Switch (36pcs)",
+    price: "1,495",
+    rating: 5.0,
+    sold: 3,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Herro T.",
+        feedback: "nice keyboard",
+      },
+      {
+        reviewer: "Santa C.",
+        feedback: "Best gift for a custom keyboard nerd",
+      },
+    ],
+    description:
+      "The Razer Mechanical Switches Gen 3 Orange Tactile Switch – a premium tactile switch designed for gamers and typists who crave a responsive, yet quieter keystroke. Offering improved durability and smoother key presses, the Gen 3 Orange switches provide a tactile bump that’s ideal for both gaming and typing experiences, with reduced noise for a quieter workspace.",
+    features: [
+      "Tactile Feel – Delivers a satisfying tactile bump for precise feedback on every keystroke, making it perfect for gaming and typing.",
+      "Improved Durability – Designed to withstand up to 80 million key presses, offering long-lasting performance and reliability.",
+      "Quieter Operation – Reduced noise compared to traditional mechanical switches, providing a quieter typing experience without sacrificing performance.",
+      "Optimized for Gaming – Perfect balance between tactile feedback and actuation, making them ideal for both fast-paced gaming and detailed typing tasks.",
+      "Smooth Keypress – Enhanced keypress smoothness for a consistent and comfortable typing experience.",
+      "Longer Lifespan – Designed to last, with durable materials ensuring a long and trouble-free life for every keystroke.",
+      "Customizable RGB Lighting – Fully compatible with Razer's Chroma RGB for personalized lighting effects that sync with your gaming setup.",
+      "Compatible with Razer Keyboards – Perfect for Razer mechanical keyboards, allowing for easy switch customization.",
+      "Hot-Swappable – Enjoy the flexibility of swapping switches without soldering, giving you complete control over your keyboard setup.",
+    ],
+  },
+  {
+    id: "coiledaviatorcable",
+    class: "cable",
+    img: "/Home Page/product img/Coiled Keyboard Aviator Cable.jpg",
+    name: "Coiled Keyboard Aviator Cable in Dark Blue | GX16 to USB-C",
+    price: "599",
+    rating: 4.7,
+    sold: 2,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Anonymous",
+        feedback: "Goods din",
+      },
+      {
+        reviewer: "Andrew Garfield",
+        feedback: "Aesthetic wise, 100!",
+      },
+    ],
+    description:
+      "The Razer Mechanical Switches Gen 3 Orange Tactile Switch – a premium tactile switch designed for gamers and typists who crave a responsive, yet quieter keystroke. Offering improved durability and smoother key presses, the Gen 3 Orange switches provide a tactile bump that’s ideal for both gaming and typing experiences, with reduced noise for a quieter workspace.",
+    features: [
+      "Tactile Feel – Delivers a satisfying tactile bump for precise feedback on every keystroke, making it perfect for gaming and typing.",
+      "Improved Durability – Designed to withstand up to 80 million key presses, offering long-lasting performance and reliability.",
+      "Quieter Operation – Reduced noise compared to traditional mechanical switches, providing a quieter typing experience without sacrificing performance.",
+      "Optimized for Gaming – Perfect balance between tactile feedback and actuation, making them ideal for both fast-paced gaming and detailed typing tasks.",
+      "Smooth Keypress – Enhanced keypress smoothness for a consistent and comfortable typing experience.",
+      "Longer Lifespan – Designed to last, with durable materials ensuring a long and trouble-free life for every keystroke.",
+      "Customizable RGB Lighting – Fully compatible with Razer's Chroma RGB for personalized lighting effects that sync with your gaming setup.",
+      "Compatible with Razer Keyboards – Perfect for Razer mechanical keyboards, allowing for easy switch customization.",
+      "Hot-Swappable – Enjoy the flexibility of swapping switches without soldering, giving you complete control over your keyboard setup.",
+    ],
+  },
+  {
+    id: "rakkpirah",
+    class: "keyboard",
+    img: "/Home Page/product img/Rakk Pirah.webp",
+    name: "Rakk Pirah Plus 66 Keys Universal HotSwap Mechanical Gaming Keyboard",
+    price: "2,495",
+    rating: 4.9,
+    sold: 43,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Anonymous",
+        feedback: "OKay naman. nawawala yung rgb minsan",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Poya type oy huhu",
+      },
+    ],
+    description:
+      "The RAKK Pirah – a budget-friendly 65% mechanical keyboard designed for both casual and competitive users. With its hot-swappable sockets, vibrant RGB lighting, and solid build quality, the Pirah delivers a customizable and satisfying typing experience in a compact, space-saving layout.",
+    features: [
+      "65% Layout – Compact form factor that retains essential keys while saving desk space.",
+      "Hot-Swappable Sockets – Easily change switches without soldering, allowing for full customization.",
+      "RGB Backlighting – Multiple lighting modes and effects for a visually dynamic setup.",
+      "Mechanical Switches – Available in various switch types to suit your typing preference.",
+      "Durable Build – Sturdy plastic case and reliable construction for everyday use.",
+      "Customizable Keycaps – Compatible with most keycap sets for a personalized look and feel.",
+      "USB-C Connectivity – Modern, reversible connection for fast and stable input.",
+      "Plug-and-Play – Simple setup with no drivers required, ready to use out of the box.",
+      "Windows Compatibility – Fully functional on Windows OS for both gaming and productivity.",
+    ],
+  },
+  {
+    id: "madlion60he",
+    class: "keyboard",
+    img: "/Home Page/product img/Madlion60He.webp",
+    name: "Madlion Mad60He/68He",
+    price: "2,990",
+    rating: 4.9,
+    sold: 15,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Vhong N.",
+        feedback: "Plus aim sa valo bro nice",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Budget keyboard very nice",
+      },
+    ],
+    description:
+      "The Madlion 60HE – a high-performance 60% mechanical keyboard built for competitive gaming and lightning-fast response. Featuring Rapid Trigger technology, analog Hall Effect switches, and a minimal compact design, the 60HE is engineered for serious gamers who demand precision and speed.",
+    features: [
+      "60% Layout – Ultra-compact form factor that frees up desk space while retaining core functionality.",
+      "Hall Effect Switches – Analog magnetic switches for ultra-precise input and smooth keypress control.",
+      "Rapid Trigger – Instantly actuate and reset keys without needing full release, ideal for fast-paced gameplay.",
+      "Customizable Actuation – Adjust actuation points per key to match your playstyle and typing preference.",
+      "Low Latency – Engineered for ultra-fast response times, reducing input delay to the bare minimum.",
+      "Hot-Swappable – Easily swap out switches without soldering for maximum customization.",
+      "RGB Lighting – Per-key customizable lighting effects for a dynamic and personalized look.",
+      "Detachable USB-C – Reliable wired connection with easy portability and clean cable management.",
+      "Software Support – Fine-tune performance and lighting through powerful configuration software.",
+    ],
+  },
+  {
+    id: "keychronk8pro",
+    class: "keyboard",
+    img: "/Home Page/product img/Keychron k8 pro.webp",
+    name: "Keychron K8 Pro QMK/VIA Wireless Mechanical Keyboard",
+    price: "6,000",
+    rating: 5.0,
+    sold: 3,
+    reviewCount: 2,
+    reviews: [
+      {
+        reviewer: "Vhong N.",
+        feedback: "Plus aim sa valo bro nice",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Budget keyboard very nice",
+      },
+    ],
+    description:
+      "The Madlion 60HE – a high-performance 60% mechanical keyboard built for competitive gaming and lightning-fast response. Featuring Rapid Trigger technology, analog Hall Effect switches, and a minimal compact design, the 60HE is engineered for serious gamers who demand precision and speed.",
+    features: [
+      "60% Layout – Ultra-compact form factor that frees up desk space while retaining core functionality.",
+      "Hall Effect Switches – Analog magnetic switches for ultra-precise input and smooth keypress control.",
+      "Rapid Trigger – Instantly actuate and reset keys without needing full release, ideal for fast-paced gameplay.",
+      "Customizable Actuation – Adjust actuation points per key to match your playstyle and typing preference.",
+      "Low Latency – Engineered for ultra-fast response times, reducing input delay to the bare minimum.",
+      "Hot-Swappable – Easily swap out switches without soldering for maximum customization.",
+      "RGB Lighting – Per-key customizable lighting effects for a dynamic and personalized look.",
+      "Detachable USB-C – Reliable wired connection with easy portability and clean cable management.",
+      "Software Support – Fine-tune performance and lighting through powerful configuration software.",
     ],
   },
 ];
