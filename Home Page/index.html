@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/Home Page/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
     <title>Home Page</title>
   </head>
   <body>
@@ -20,6 +24,12 @@
         <span class="dot active" onclick="bannerImgSelector('1')"></span>
         <span class="dot" onclick="bannerImgSelector('2')"></span>
         <span class="dot" onclick="bannerImgSelector('3')"></span>
+      </div>
+    </section>
+    <section id="top-picks-section">
+      <h2 id="top-picks-title">Top Picks</h2>
+      <div id="top-picks-products-container">
+        <!-- product card here -->
       </div>
     </section>
     <footer id="footer"></footer>
@@ -45,7 +55,11 @@
         .then((x) => x.text())
         .then((y) => (document.getElementById("footer").innerHTML = y));
     </script>
+    <!-- Jquery Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Script for the Home Page banner -->
     <script src="/Home Page/bannerSection.js"></script>
+    <!-- Module script for the top picks section -->
+    <script type="module" src="./tpSection.js"></script>
   </body>
 </html>
