@@ -40,15 +40,15 @@ for (let i = 0; i < 3; i++) {
   customerFeedback.eq(i).html(feedback[i].text);
 }
 
-function nextInd(index) {
-  //functi0n para ma balik ang number. If 5 na ang index, mo repeat siya sa 0
-  return index % feedbackLen;
-}
-
 rightBtn.on("click", () => {
-  leftCardInd = nextInd(leftCardInd - 1);
-  centerCardInd = nextInd(centerCardInd - 1);
-  rightCardInd = nextInd(rightCardInd - 1);
+  function nextInd(index) {
+    //functi0n para ma balik ang number. If 5 na ang index, mo repeat siya sa 0
+    return (index + feedbackLen - 1) % feedbackLen;
+  }
+
+  leftCardInd = nextInd(leftCardInd);
+  centerCardInd = nextInd(centerCardInd);
+  rightCardInd = nextInd(rightCardInd);
 
   let cardsInd = [leftCardInd, centerCardInd, rightCardInd];
 
@@ -59,9 +59,14 @@ rightBtn.on("click", () => {
 });
 
 leftBtn.on("click", () => {
-  leftCardInd = nextInd(leftCardInd + 1);
-  centerCardInd = nextInd(centerCardInd + 1);
-  rightCardInd = nextInd(rightCardInd + 1);
+  function nextInd(index) {
+    //functi0n para ma balik ang number. If 5 na ang index, mo repeat siya sa 0
+    return (index + feedbackLen + 1) % feedbackLen;
+  }
+
+  leftCardInd = nextInd(leftCardInd);
+  centerCardInd = nextInd(centerCardInd);
+  rightCardInd = nextInd(rightCardInd);
 
   let cardsInd = [leftCardInd, centerCardInd, rightCardInd];
 
