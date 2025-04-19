@@ -192,3 +192,117 @@ section {
 .add-to-cart-button:hover {
   background-color: #ffeb13;
 }
+
+/* Css for the customer feedback section */
+
+#customer-feedbacks-section {
+  background-color: #5d5d5d;
+  margin-top: 30px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+#customer-feedbacks-title {
+  color: #f7f7f7;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#customer-feedbacks-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  #customer-feedbacks-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #left-card {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  #customer-feedbacks-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #right-card {
+    display: none;
+  }
+}
+
+.customer-feedback-card {
+  background-color: #f7f7f7;
+  padding: 10px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.five-star-img {
+  width: 80px;
+}
+
+.feedback-text-container {
+  height: 100px;
+}
+
+.feedback {
+  margin: 0;
+  margin-top: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.customer-name {
+  text-align: center;
+  margin: 0;
+  color: #929292;
+}
+
+.feedback-next-button {
+  position: absolute;
+  border: none;
+  background-color: #e5d529a8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* right and left feedback-next-buttons */
+
+.right {
+  right: 20px;
+  top: 53%;
+}
+
+.left {
+  left: 20px;
+  top: 52%;
+}
+
+.feedback-next-button .arrow {
+  width: 20px;
+  opacity: 30%;
+}
+
+.feedback-next-button:hover {
+  background-color: #e5d429;
+}
+
+.feedback-next-button:hover .arrow {
+  opacity: 100%;
+}
