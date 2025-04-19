@@ -218,10 +218,14 @@ footer {
   }
 }
 
+html {
+  position: relative;
+}
+
 #small-screen-cover {
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(50, 46, 47, 0.353);
   z-index: 1;
   display: none;
@@ -229,8 +233,8 @@ footer {
 
 #small-screen-nav-container {
   position: absolute;
-  height: 100vh;
-  background-color: #a0c334;
+  height: 100%;
+  background-color: #693382;
   right: 0;
   z-index: 2;
   width: 30%;
@@ -244,7 +248,7 @@ footer {
 }
 
 .small-nav-icon-container {
-  background-color: #a0c334;
+  background-color: #693382;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -254,7 +258,7 @@ footer {
 }
 
 .small-nav-icon-container:hover {
-  background-color: #94b533;
+  background-color: #8d3fb1;
 }
 
 .small-nav-icon {
