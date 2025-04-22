@@ -239,7 +239,10 @@ section {
 
 .customer-feedback-card {
   background-color: #f7f7f7;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .feedback-container {
@@ -305,4 +308,37 @@ section {
 
 .feedback-next-button:hover .arrow {
   opacity: 100%;
+}
+
+/* css for article section */
+
+#switchcraft-article {
+  padding: 20px;
+}
+
+#article-title {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+#article-text {
+  font-weight: 300;
+}
+
+.article-line-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#read-more-button {
+  border: none;
+  background-color: #e5d429;
+  padding: 10px;
+}
+
+#read-more-button:hover {
+  background-color: #f4e21f;
 }
