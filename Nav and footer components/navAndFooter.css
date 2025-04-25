@@ -9,9 +9,15 @@ body {
   flex-direction: column;
 }
 
-#header-promo-container {
+header {
+  display: flex;
+  justify-content: center;
   background-color: #5d5d5d;
-  width: 100%;
+}
+
+#header-promo-container {
+  /* background-color: #5d5d5d; */
+  width: 80%;
   white-space: nowrap;
   box-sizing: border-box;
   overflow: hidden;
@@ -34,11 +40,25 @@ body {
   }
 }
 
+.big-screen-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.upper-big-screen-nav {
+  background-color: #693382;
+}
+
 #upper-nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 10px 20px;
+  width: 80%;
+  max-width: 1584px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #search-bar-container {
@@ -97,6 +117,18 @@ a {
   width: 30px;
 }
 
+@media (max-width: 1003px) {
+  #upper-nav-container {
+    width: 100%;
+  }
+  #logo {
+    margin-left: 10px;
+  }
+  #nav-icons-container {
+    margin-right: 10px;
+  }
+}
+
 #menu-button {
   border: none;
   background-color: inherit;
@@ -112,7 +144,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f7f7;
 }
 
 #lower-nav-list-container {
@@ -138,17 +169,23 @@ a {
 
 footer {
   margin-top: auto;
+  background-color: #693382;
+}
+
+#footer-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #upper-footer-container {
-  background-color: #693382;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 80%;
+  max-width: 1584px;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  gap: 13%;
   flex-wrap: wrap;
 }
 
@@ -198,6 +235,14 @@ footer {
   gap: 5px;
 }
 
+@media (max-width: 1003px) {
+  #upper-footer-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 @media (max-width: 1001px) {
   #search-bar-container {
     width: 56%;
@@ -207,14 +252,6 @@ footer {
 @media (max-width: 781px) {
   #search-bar-container {
     width: 100%;
-  }
-}
-
-@media (max-width: 701px) {
-  #upper-nav-container,
-  #upper-footer-container {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 
