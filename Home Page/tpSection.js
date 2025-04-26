@@ -2,6 +2,8 @@
 
 import { tpProducts } from "./tp-products.js";
 
+const topPicksProductsContainer = $("#top-picks-products-container");
+
 tpProducts.forEach(function (product) {
   //product card template that i made and will be used to dynamically add top picks products
   const productCard = `<div class="product-card" data-id="${product.id}">
@@ -23,7 +25,8 @@ tpProducts.forEach(function (product) {
             </div>
             <p class="sold">${product.sold} sold</p>
           </div>
-          <div class="product-quantity-selector-container">
+          <div class="quantity-favorites-container">
+           <div class="product-quantity-selector-container">
             <select class="product-quality-selector">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -37,13 +40,29 @@ tpProducts.forEach(function (product) {
               <option value="10">10</option>
             </select>
           </div>
+
+            <svg
+        class="style_icon__KAdjP"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="black"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+        ></path>
+      </svg>
+          </div>
           <div class="added-to-cart-indicator-container">
             <p class="added-to-cart-indicator">Added to Cart</p>
           </div>
           <button class="add-to-cart-button">Add to Cart</button>
         </div>`;
 
-  const topPicksProductsContainer = $("#top-picks-products-container");
   topPicksProductsContainer.append(productCard);
 });
 
@@ -52,3 +71,25 @@ tpProducts.forEach(function (product) {
 //   const productId = $(this).data("id"); //kuhaon ang data-id sa clicked product
 //   // window.location.href = `/trial.html?id=${productId}`;
 // });
+
+const favorites = [];
+
+topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
+  const favoriteProductId = $(this).closest(".product-card").data("id");
+
+  if ($(this).attr("fill") === "black") {
+    $(this).attr("fill", "none");
+
+    var index = favorites.indexOf(favoriteProductId);
+    favorites.splice(index, 1);
+
+    console.log(favorites);
+  } else {
+    $(this).attr("fill", "black");
+    favorites.unshift(favoriteProductId);
+
+    console.log(favorites);
+  }
+
+  localStorage.setItem("favoritesArr", JSON.stringify(favorites));
+});

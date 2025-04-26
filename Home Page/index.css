@@ -205,8 +205,22 @@ section {
   color: #929292;
 }
 
+.quantity-favorites-container {
+  display: flex;
+  gap: 10px;
+}
+
+.style_icon__KAdjP:hover {
+  stroke: rgb(78, 78, 78);
+}
+
 .product-quality-selector {
-  border: 1px solid #929292;
+  border: 1px solid rgb(78, 78, 78);
+  cursor: pointer;
+}
+
+.product-quality-selector:hover {
+  border: 1px solid#929292;
   cursor: pointer;
 }
 
@@ -400,6 +414,14 @@ section {
 #article-content-container {
   width: 80%;
   max-width: 1584px;
+}
+
+@media (max-width: 1003px) {
+  #article-content-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 #article-title {
