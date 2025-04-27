@@ -2,7 +2,10 @@
 
 import { tpProducts } from "./tp-products.js";
 
+// localStorage.removeItem("favorites_idArr");
+
 const topPicksProductsContainer = $("#top-picks-products-container");
+let favorites_id = JSON.parse(localStorage.getItem("favorites_idArr")) || [];
 
 tpProducts.forEach(function (product) {
   //product card template that i made and will be used to dynamically add top picks products
@@ -72,24 +75,23 @@ tpProducts.forEach(function (product) {
 //   // window.location.href = `/trial.html?id=${productId}`;
 // });
 
-const favorites = [];
+favorites_id.forEach(function (favorites_id) {
+  $(`[data-id="${favorites_id}"] .style_icon__KAdjP`).attr("fill", "red");
+});
 
 topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
   const favoriteProductId = $(this).closest(".product-card").data("id");
 
-  if ($(this).attr("fill") === "black") {
+  if ($(this).attr("fill") === "red") {
     $(this).attr("fill", "none");
 
-    var index = favorites.indexOf(favoriteProductId);
-    favorites.splice(index, 1);
-
-    console.log(favorites);
+    var index = favorites_id.indexOf(favoriteProductId);
+    favorites_id.splice(index, 1);
   } else {
-    $(this).attr("fill", "black");
-    favorites.unshift(favoriteProductId);
-
-    console.log(favorites);
+    $(this).attr("fill", "red");
+    favorites_id.unshift(favoriteProductId);
   }
 
-  localStorage.setItem("favoritesArr", JSON.stringify(favorites));
+  console.log(favorites_id);
+  localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
 });

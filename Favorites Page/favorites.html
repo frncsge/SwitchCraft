@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/Favorites Page/favorites.css" />
+    <title>Favorites</title>
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div id="favorite-home-and-page-name-outer-container">
+      <div id="favorite-home-and-page-name-contianer">
+        <a id="favorite-home-button" href="/Home Page/index.html"
+          ><p>Home</p></a
+        >
+        <p id="favorite-page-name">My Favorites</p>
+      </div>
+    </div>
+    <h2 id="page-name">My Favorites</h2>
+    <div id="no-favorites-text-section">
+      <div id="no-favorites-text-container">
+        <h1>You haven't listed an item as your favorite yet :/</h1>
+      </div>
+    </div>
+    <section id="favorite-products-section">
+      <div id="favorite-products-grid-container">
+        <div id="favorite-products-grid">
+          <!--favoritwe products here -->
+        </div>
+      </div>
+    </section>
+    <footer id="footer"></footer>
+
+    <!-- script to fetch the nav and footerrrrrr -->
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((navbar) => navbar.text())
+        .then((navbar) => {
+          document.getElementById("navbar").innerHTML = navbar;
+
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((footer) => footer.text())
+        .then(
+          (footer) => (document.getElementById("footer").innerHTML = footer)
+        );
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="/Favorites Page/favorites.js"></script>
+  </body>
+</html>
