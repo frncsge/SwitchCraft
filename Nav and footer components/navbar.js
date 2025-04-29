@@ -42,3 +42,15 @@ menuButton.click(() => {
 
 smallScreenCover.click(removeSmallNav);
 exitButton.click(removeSmallNav);
+
+//section for making the navigation bar sticky
+$(window).scroll(() => {
+  var scrollY = window.scrollY;
+  if (scrollY >= 300) {
+    $("#navbar").addClass("sticky-nav");
+  } else if (scrollY < 200) {
+    $("#navbar").removeClass("sticky-nav");
+  }
+
+  console.log(scrollY);
+});
