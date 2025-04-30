@@ -18,6 +18,7 @@ header {
 #header-promo-container {
   /* background-color: #5d5d5d; */
   width: 80%;
+  max-width: 1584px;
   white-space: nowrap;
   box-sizing: border-box;
   overflow: hidden;
@@ -29,6 +30,26 @@ header {
   font-size: 13px;
   color: #f7f7f7;
   animation: scrollTextAnimation 20s linear infinite;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideDown 0.3s ease-out forwards;
+  z-index: 2;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scrollTextAnimation {
@@ -118,7 +139,8 @@ a {
 }
 
 @media (max-width: 1003px) {
-  #upper-nav-container {
+  #upper-nav-container,
+  #header-promo-container {
     width: 100%;
   }
   #logo {
@@ -155,11 +177,11 @@ a {
 }
 
 .lower-nav-list {
-  font-size: 13px;
   list-style-type: none;
 }
 
 .lower-nav-list > a {
+  font-size: 13px;
   color: black;
 }
 
@@ -264,16 +286,16 @@ html {
   height: 100%;
   width: 100%;
   background-color: rgba(50, 46, 47, 0.353);
-  z-index: 1;
+  z-index: 3;
   display: none;
 }
 
 #small-screen-nav-container {
-  position: absolute;
+  position: fixed;
   height: 100%;
   background-color: #693382;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   width: 30%;
   display: none;
 }

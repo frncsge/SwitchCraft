@@ -29,6 +29,10 @@
   font-size: 20px;
 }
 
+#favorite-home-button > p:hover {
+  color: rgb(116, 116, 116);
+}
+
 #favorite-home-and-page-name-outer-container {
   display: flex;
   justify-content: center;
@@ -43,7 +47,7 @@
 
 #favorite-home-and-page-name-contianer > p,
 a {
-  font-size: 14px;
+  font-size: 13px;
   color: black;
 }
 
@@ -87,6 +91,11 @@ a {
     margin-left: 10px;
     margin-right: 10px;
     width: 100%;
+  }
+  #favorite-home-and-page-name-contianer {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 

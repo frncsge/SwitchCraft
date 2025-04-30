@@ -2,6 +2,15 @@ const navIconsContainer = $("#nav-icons-container");
 const menuButton = $("#menu-button");
 const logo = $("#logo");
 
+const smallScreenCover = $("#small-screen-cover");
+const smallScreenNavContainer = $("#small-screen-nav-container");
+const exitButton = $("#exit-icon-container");
+
+function removeSmallNav() {
+  smallScreenNavContainer.css("display", "none");
+  smallScreenCover.css("display", "none");
+}
+
 function navigationBarResize() {
   let screenWidth = window.innerWidth;
 
@@ -15,6 +24,7 @@ function navigationBarResize() {
     logo.css("width", "100px");
     navIconsContainer.css("display", "flex");
     menuButton.css("display", "none");
+    removeSmallNav();
   }
 }
 
@@ -24,22 +34,6 @@ $(document).ready(() => {
 
 $(window).resize(navigationBarResize);
 
-// this part below is for the menu button functionality na
-
-const smallScreenCover = $("#small-screen-cover");
-const smallScreenNavContainer = $("#small-screen-nav-container");
-const exitButton = $("#exit-icon-container");
-
-function removeSmallNav() {
-  smallScreenNavContainer.css("display", "none");
-  smallScreenCover.css("display", "none");
-}
-
-menuButton.click(() => {
-  smallScreenCover.css("display", "block");
-  smallScreenNavContainer.css("display", "block");
-});
-
 smallScreenCover.click(removeSmallNav);
 exitButton.click(removeSmallNav);
 
@@ -47,10 +41,15 @@ exitButton.click(removeSmallNav);
 $(window).scroll(() => {
   var scrollY = window.scrollY;
   if (scrollY >= 300) {
-    $("#navbar").addClass("sticky-nav");
+    $("#navbar").addClass("sticky-nav"); //the #navbar came from the index.html file (homepage html file)
   } else if (scrollY < 200) {
     $("#navbar").removeClass("sticky-nav");
   }
 
   console.log(scrollY);
+});
+
+menuButton.click(() => {
+  smallScreenCover.css("display", "block");
+  smallScreenNavContainer.css("display", "block");
 });

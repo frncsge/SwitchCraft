@@ -11,6 +11,7 @@
     <title>Home Page</title>
   </head>
   <body>
+    <nav id="small-screen-navbar"></nav>
     <nav id="navbar"></nav>
     <section id="hero-section">
       <div id="banner">
@@ -162,12 +163,18 @@
           const script = document.createElement("script");
           const jquery = document.createElement("script");
 
-          jquery.src =
-            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          // jquery.src =
+          //   "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
           script.src = "/Nav and footer components/navbar.js";
 
           document.body.appendChild(jquery);
           document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
         });
 
       fetch("/Nav and footer components/footer.html")
