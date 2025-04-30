@@ -6,6 +6,7 @@
     <title>Favorites</title>
   </head>
   <body>
+    <nav id="small-screen-navbar"></nav>
     <nav id="navbar"></nav>
     <div id="favorite-home-and-page-name-outer-container">
       <div id="favorite-home-and-page-name-contianer">
@@ -46,6 +47,12 @@
 
           document.body.appendChild(jquery);
           document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
         });
 
       fetch("/Nav and footer components/footer.html")
