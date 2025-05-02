@@ -45,8 +45,6 @@ $(window).scroll(() => {
   } else if (scrollY < 200) {
     $("#navbar").removeClass("sticky-nav");
   }
-
-  console.log(scrollY);
 });
 
 menuButton.click(() => {

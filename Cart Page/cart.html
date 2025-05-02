@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Cart Page/cart.css" />
+    <title>Cart Page</title>
+  </head>
+  <body>
+    <nav id="small-screen-navbar"></nav>
+    <nav id="navbar"></nav>
+    <div id="cart-home-and-page-name-outer-container">
+      <div id="cart-home-and-page-name-contianer">
+        <a id="cart-home-button" href="/Home Page/index.html"><p>Home</p></a>
+        <p id="cart-page-name">My Cart</p>
+      </div>
+    </div>
+    <h2 id="page-name">My Cart</h2>
+    <!-- hilo there hihi -->
+    <div id="no-cart-text-section">
+      <div id="no-cart-text-container">
+        <h1>You haven't added an item in your cart yet :/</h1>
+      </div>
+    </div>
+    <!-- cart product section starts here -->
+    <main id="cart-grid-container">
+      <div id="checkout-count-container">
+        <h3 id="checkout-count">Checkout (n) Item</h3>
+      </div>
+      <div id="cart-grid">
+        <div id="cart-item-card-container">
+          <div class="cart-item-card">
+            <h3 class="delivery-date">Delivery date: May 5, 2025</h3>
+            <div class="cart-item-card-spec-grid">
+              <img
+                class="cart-img"
+                src="/Home Page/product img/aula f75.png"
+                alt="product-img"
+              />
+              <div class="cart-item-spec">
+                <p class="product-name">
+                  Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in White
+                  and Blue
+                </p>
+                <p class="product-price">Php 1,160</p>
+                <div class="product-qty-container">
+                  <p class="product-qty">Quantity: 1</p>
+                  <!-- <select class="product-qty-selector">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select> -->
+                  <button class="update-btn">UPDATE</button>
+                  <button class="remove-btn">REMOVE</button>
+                </div>
+              </div>
+              <div class="product-shipping-option-container">
+                <p class="shipping-option-text">Pick a shipping option:</p>
+                <div class="free-shipping-option-container">
+                  <input
+                    class="product-shipping-option-radio"
+                    type="radio"
+                    name="shipping-option"
+                    value="0"
+                  />
+                  <div class="free-shipping-text">
+                    <p class="shipping-option-date">May 13, 2025</p>
+                    <p class="shipping-option-price">Free Shipping</p>
+                  </div>
+                </div>
+                <div class="second-shipping-option-container">
+                  <input
+                    class="product-shipping-option-radio"
+                    type="radio"
+                    name="shipping-option"
+                    value="150"
+                  />
+                  <div class="second-shipping-text">
+                    <p class="shipping-option-date">May 11, 2025</p>
+                    <p class="shipping-option-price">Php 150.00 - Shipping</p>
+                  </div>
+                </div>
+                <div class="third-shipping-option-container">
+                  <input
+                    class="product-shipping-option-radio"
+                    type="radio"
+                    name="shipping-option"
+                    value="200"
+                  />
+                  <div class="second-shipping-text">
+                    <p class="shipping-option-date">May 8, 2025</p>
+                    <p class="shipping-option-price">Php 200.00 - Shipping</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="place-order-container">
+          <h3 id="order-summary-text">Order Summary</h3>
+          <div id="total-items-container">
+            <p id="total-items-text">Total items (n):</p>
+            <p id="total-items-price">Php 1,160</p>
+          </div>
+          <div id="shipping-cost-container">
+            <p id="shipping-cost-text">Shipping Cost:</p>
+            <p id="shipping-cost-price">Php 0.00</p>
+          </div>
+          <hr />
+          <div id="total-cost-container">
+            <p id="total-cost-text">Total Cost:</p>
+            <p id="total-cost-price">Php 1,160</p>
+          </div>
+          <button id="place-order-btn">Place Order</button>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((navbar) => navbar.text())
+        .then((navbar) => {
+          document.getElementById("navbar").innerHTML = navbar;
+
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((footer) => footer.text())
+        .then(
+          (footer) => (document.getElementById("footer").innerHTML = footer)
+        );
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="cart.js"></script>
+  </body>
+</html>
