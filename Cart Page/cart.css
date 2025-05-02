@@ -1,5 +1,4 @@
 #no-cart-text-section {
-  display: none;
   display: flex;
   justify-content: center;
 }
@@ -8,7 +7,7 @@
   width: 80%;
   max-width: 1584px;
   height: 50vh;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
