@@ -127,7 +127,10 @@ topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
     return {
       id: p_id,
       qty: p_qty,
-      date_added: new Date(), //gets the current date when a product gets added to the cart
+      ship_cost: 0, //zero means the cost of the shipping
+      ship_days: 7,
+      checkout_date: null,
+      delivery_date: null, //gets the current date when a product gets added to the cart
     };
   }
 
