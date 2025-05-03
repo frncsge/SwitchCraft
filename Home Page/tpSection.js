@@ -2,8 +2,8 @@
 
 import { tpProducts } from "./tp-products.js";
 
-localStorage.removeItem("favorites_idArr");
-localStorage.removeItem("cart_idArr");
+// localStorage.removeItem("favorites_idArr");
+// localStorage.removeItem("cart_idArr");
 
 const topPicksProductsContainer = $("#top-picks-products-container");
 let favorites_id = JSON.parse(localStorage.getItem("favorites_idArr")) || [];
@@ -104,10 +104,13 @@ let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 //event delegation to target the add to cart button
 topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
   const product_id = $(this).closest(".product-card").data("id");
-  const product_qty = $(this)
-    .closest(".product-card")
-    .find(".product-quantity-selector")
-    .val();
+  const product_qty = parseInt(
+    $(this).closest(".product-card").find(".product-quantity-selector").val()
+  );
+
+  console.log(typeof product_qty);
+
+  let product = { id: product_id, qty: product_qty };
 
   //this makes the added to cart indicator visible and fades out after.
   const added_to_cart = $(this)
@@ -143,9 +146,7 @@ topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
     }
   }
 
-  check_duplicate(cart_id_qty, product_id);
-
-  // cart_id_qty.unshift(cart_obj_maker(product_id, product_qty));
+  check_duplicate(cart_id_qty, product);
 
   localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
 });

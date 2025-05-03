@@ -13,14 +13,28 @@ const empty_cart_err = $("#no-cart-text-section");
 
 const cart_card_container = $("#cart-item-card-container");
 
-function string_date(i) {
+function string_date(days) {
   let option = { year: "numeric", month: "long", day: "numeric" };
   let curr_date = new Date();
   let delivery_date = new Date(curr_date);
-  delivery_date.setDate(delivery_date.getDate() + cart_id_qty[i].ship_days);
+  delivery_date.setDate(delivery_date.getDate() + days);
 
   //para ni ma format ang date into a string for displey
   return delivery_date.toLocaleDateString("en-US", option);
+}
+
+function update_shipping_option_date() {
+  $(".free-shipping-option-container")
+    .find(".shipping-option-date")
+    .html(string_date(7));
+
+  $(".second-shipping-option-container")
+    .find(".shipping-option-date")
+    .html(string_date(5));
+
+  $(".third-shipping-option-container")
+    .find(".shipping-option-date")
+    .html(string_date(3));
 }
 
 function update_order_summary() {
@@ -55,12 +69,12 @@ if (cart_id_qty.length === 0) {
   empty_cart_err.css("display", "none");
 
   display_cart.forEach(function (cart_product, i) {
-    let display_delivery_date = string_date(i);
+    let display_delivery_date = string_date(cart_id_qty[i].ship_days);
 
     // purpose ani kay ma store ang delivery date into the local storage
     cart_id_qty[i].delivery_date = display_delivery_date;
 
-    console.log(cart_id_qty);
+    console.log(typeof cart_id_qty[i].qty);
 
     //this is to turn the string price of the products into an INT (Int nalang ako gi gamit since walay .00 akoa prices - I know bad practice pero karun ra ni T_T)
     let string_price = cart_product.price;
@@ -134,6 +148,7 @@ if (cart_id_qty.length === 0) {
             </div>`;
 
     cart_card_container.append(cart_card);
+    update_shipping_option_date();
 
     //   para ma set ang free shipping option as default
     const check_radio = $(
@@ -164,7 +179,7 @@ cart_card_container.on("change", ".product-shipping-option-radio", function () {
 
   cart_id_qty[i].ship_cost = new_ship_cost;
 
-  let display_delivery_date = string_date(i);
+  let display_delivery_date = string_date(cart_id_qty[i].ship_days);
   cart_id_qty[i].delivery_date = display_delivery_date;
 
   //when shipping option is changed, this changes the delivery date display pud!!
@@ -212,10 +227,12 @@ cart_card_container.on("click", ".update-btn", function () {
 
     $(this).html("SAVE");
   } else {
-    let new_qty = $(this)
-      .closest(".product-qty-container")
-      .find(".product-quantity-selector")
-      .val();
+    let new_qty = parseInt(
+      $(this)
+        .closest(".product-qty-container")
+        .find(".product-quantity-selector")
+        .val()
+    );
 
     cart_id_qty[i].qty = new_qty;
 
