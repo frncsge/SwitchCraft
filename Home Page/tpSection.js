@@ -95,7 +95,6 @@ topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
     favorites_id.unshift(favoriteProductId);
   }
 
-  console.log(favorites_id);
   localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
 });
 
@@ -127,6 +126,7 @@ topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
     return {
       id: p_id,
       qty: p_qty,
+      price: null,
       ship_cost: 0, //zero means the cost of the shipping
       ship_days: 7,
       checkout_date: null,
@@ -134,9 +134,18 @@ topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
     };
   }
 
-  cart_id_qty.unshift(cart_obj_maker(product_id, product_qty)); //adds the cart obj containing the product id and its date at the start of the cart_id_qty array storage
+  function check_duplicate(cart_arr, product) {
+    let p_exists = cart_arr.find((cart) => cart.id === product.id);
+    if (p_exists) {
+      p_exists.qty = p_exists.qty + product.qty;
+    } else {
+      cart_id_qty.unshift(cart_obj_maker(product_id, product_qty));
+    }
+  }
 
-  console.log(cart_id_qty);
-  console.log(product_qty);
+  check_duplicate(cart_id_qty, product_id);
+
+  // cart_id_qty.unshift(cart_obj_maker(product_id, product_qty));
+
   localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
 });

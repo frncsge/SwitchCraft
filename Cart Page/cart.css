@@ -297,8 +297,23 @@ a {
   margin-top: 18px;
   border: none;
   background-color: #e5d429;
+  cursor: pointer;
 }
 
 #place-order-btn:hover {
   background-color: #f8e402;
+}
+
+.product-quantity-selector {
+  border: 1px solid rgb(78, 78, 78);
+  cursor: pointer;
+}
+
+.product-quantity-selector:hover {
+  border: 1px solid#929292;
+  cursor: pointer;
+}
+
+.product-quantity-selector:focus {
+  outline: none;
 }
