@@ -10,6 +10,98 @@
     <nav id="small-screen-navbar"></nav>
     <nav id="navbar"></nav>
 
+    <main id="product-grid-container">
+      <div id="product-grid">
+        <img
+          id="product-img"
+          src="/Home Page/product img/aula f75.png"
+          alt="product-img"
+        />
+
+        <div id="product-info-container">
+          <h1 id="product-name">
+            Aula F75 Pro Mechanical Keyboard 75% Gasket Mounted in White and
+            Blue
+          </h1>
+          <div id="product-rating-sold-review-container">
+            <p id="product-rating">
+              <img
+                id="star"
+                src="/Home Page/one review star 1.png"
+                alt="Star"
+              />
+              4.8
+            </p>
+            <p id="product-sold">181 Sold</p>
+            <p id="product-review-count">2 Reviews</p>
+          </div>
+          <div id="product-price-favorite-btn-container">
+            <h2 id="product-price">Php 1,116</h2>
+            <div id="favorite-btn-container">
+              <svg
+                class="style_icon__KAdjP"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+              <p id="add-to-favorite-text">Add to Favorites</p>
+            </div>
+          </div>
+          <p id="quantity-title-text">Quantity</p>
+          <select id="product-quantity-selector">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <div id="add-to-cart-btn-container">
+            <button id="add-to-cart-btn">Add to Cart</button>
+          </div>
+          <hr />
+          <h3 id="about-this-item-title-text">About this item</h3>
+          <p id="product-description">
+            The AULA F75 is a high-performance mechanical gaming keyboard
+            designed for gamers who demand speed, durability, and customization.
+            Featuring hot-swappable mechanical switches, the F75 allows you to
+            easily change switches without soldering, ensuring a personalized
+            typing and gaming experience.
+          </p>
+          <ul id="product-feature-ul">
+            <li>
+              "Hot-Swappable Switches – Supports 3-pin and 5-pin mechanical
+              switches for ultimate customization.", "Precise & Responsive –
+              Choose from linear, tactile, or clicky switches to match your
+              playstyle.", "RGB Backlighting – 16.8 million colors with dynamic
+              lighting effects for immersive gaming.", "75% Compact Layout –
+              Saves desk space while keeping essential function keys.", "Durable
+              Construction – Sturdy metal frame and PBT keycaps for long-lasting
+              performance.", "Anti-Ghosting & N-Key Rollover – Ensures every
+              keystroke is registered, even during intense gaming.", "Detachable
+              USB-C Cable – Easy to replace and store.",
+            </li>
+            <li>
+              "Wide Compatibility – Works with Windows, macOS, and Linux."
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
     <footer id="footer"></footer>
 
     <script>
@@ -38,6 +130,6 @@
         .then((x) => x.text())
         .then((y) => (document.getElementById("footer").innerHTML = y));
     </script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </body>
 </html>
