@@ -23,6 +23,12 @@ function string_date(days) {
   return delivery_date.toLocaleDateString("en-US", option);
 }
 
+function item_counter() {
+  return cart_id_qty.reduce((acc, cv) => {
+    return acc + cv.qty;
+  }, 0);
+}
+
 function update_shipping_option_date() {
   $(".free-shipping-option-container")
     .find(".shipping-option-date")
@@ -42,6 +48,12 @@ function update_order_summary() {
     ? $("#total-items-text").html(`Total items: ${cart_id_qty.length}`)
     : $("#total-items-text").html(`Total item: ${cart_id_qty.length}`);
 
+  const item_count = item_counter();
+
+  item_count > 1
+    ? $("#total-items-text").html(`Total items: ${item_count}`)
+    : $("#total-items-text").html(`Total item: ${item_count}`);
+
   const total_items_price = cart_id_qty.reduce(function (total, currentValue) {
     return total + currentValue.price * currentValue.qty;
   }, 0);
@@ -56,9 +68,9 @@ function update_order_summary() {
   const string_total_ship_cost = total_ship_cost.toLocaleString();
   const string_total_cost = total_cost.toLocaleString();
 
-  $("#total-items-price").html(`Php ${string_total_items_price}`);
-  $("#shipping-cost-price").html(`Php ${string_total_ship_cost}`);
-  $("#total-cost-price").html(`Php ${string_total_cost}`);
+  $("#total-items-price").html(`Php ${string_total_items_price}.00`);
+  $("#shipping-cost-price").html(`Php ${string_total_ship_cost}.00`);
+  $("#total-cost-price").html(`Php ${string_total_cost}.00`);
 }
 
 if (cart_id_qty.length === 0) {
@@ -82,9 +94,11 @@ if (cart_id_qty.length === 0) {
 
     cart_id_qty[i].price = int_price;
 
-    cart_id_qty.length > 1
-      ? $("#checkout-count").html(`Checkout ${cart_id_qty.length} items:`)
-      : $("#checkout-count").html(`Checkout ${cart_id_qty.length} item:`);
+    const item_count = item_counter();
+
+    item_count > 1
+      ? $("#checkout-count").html(`Checkout ${item_count} items:`)
+      : $("#checkout-count").html(`Checkout ${item_count} item:`);
 
     const cart_card = `<div class="cart-item-card" data-id="${cart_product.id}">
               <h3 class="delivery-date">Delivery date: ${display_delivery_date}</h3>
