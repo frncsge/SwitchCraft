@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Product Page/productpage.css" />
+    <title>Product Page</title>
+  </head>
+  <body>
+    <nav id="small-screen-navbar"></nav>
+    <nav id="navbar"></nav>
+
+    <footer id="footer"></footer>
+
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("navbar").innerHTML = y;
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((x) => x.text())
+        .then((y) => (document.getElementById("footer").innerHTML = y));
+    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+  </body>
+</html>
