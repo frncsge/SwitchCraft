@@ -82,17 +82,79 @@ favorites_id.forEach(function (favProductId) {
 
 grid.on("click", ".style_icon__KAdjP", function () {
   var favoriteProductId = $(this).closest(".product-card").data("id");
+  var product_card = $(this).closest(".product-card");
 
   if ($(this).attr("fill") === "red") {
     $(this).attr("fill", "none");
 
     var index = favorites_id.indexOf(favoriteProductId);
     favorites_id.splice(index, 1);
+    product_card.remove();
   } else {
     $(this).attr("fill", "red");
     favorites_id.unshift(favoriteProductId);
   }
 
-  console.log(favorites_id);
+  if (favorites_id.length === 0) {
+    $("#no-favorites-text-section").css("display", "flex");
+  }
+
+  console.log("index " + index);
   localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
+});
+
+//getting the products inside the cart local storage
+const favorite_products_grid = $("#favorite-products-grid");
+let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
+
+//event delegation to target the add to cart button
+favorite_products_grid.on("click", ".add-to-cart-button", function () {
+  const product_id = $(this).closest(".product-card").data("id");
+  const product_qty = parseInt(
+    $(this).closest(".product-card").find(".product-quality-selector").val()
+  );
+
+  console.log(typeof product_qty);
+
+  let product = { id: product_id, qty: product_qty };
+
+  //this makes the added to cart indicator visible and fades out after.
+  const added_to_cart = $(this)
+    .closest(".product-card")
+    .find(".added-to-cart-indicator");
+
+  added_to_cart.css("display", "block");
+
+  //this makes the added to cart indicator visible and fades out after
+  setTimeout(() => {
+    added_to_cart.css("display", "none");
+  }, 1700);
+
+  function cart_obj_maker(p_id, p_qty) {
+    //p_id stands for product id and p_qty for product quantity
+    return {
+      id: p_id,
+      qty: p_qty,
+      price: null,
+      ship_cost: 0, //zero means the cost of the shipping
+      ship_days: 7,
+      checkout_date: null,
+      delivery_date: null, //gets the current date when a product gets added to the cart
+    };
+  }
+
+  function check_duplicate(cart_arr, product) {
+    let p_exists = cart_arr.find((cart) => cart.id === product.id);
+    if (p_exists) {
+      p_exists.qty = p_exists.qty + product.qty;
+    } else {
+      cart_id_qty.unshift(cart_obj_maker(product_id, product_qty));
+    }
+  }
+
+  check_duplicate(cart_id_qty, product);
+
+  console.log(cart_id_qty);
+
+  localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
 });

@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #ededed;
+  background-color: white;
 }
 
 section {
@@ -139,9 +139,8 @@ section {
 /* css for the top picks product cards */
 
 .product-card {
-  box-shadow: 2 2 5 rgb(0, 0, 0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background-color: #f7f7f7;
   cursor: pointer;
 }
 
@@ -214,30 +213,31 @@ section {
   stroke: rgb(78, 78, 78);
 }
 
-.product-quality-selector {
+.product-quantity-selector {
   border: 1px solid rgb(78, 78, 78);
   cursor: pointer;
 }
 
-.product-quality-selector:hover {
+.product-quantity-selector:hover {
   border: 1px solid#929292;
   cursor: pointer;
 }
 
-.product-quality-selector:focus {
+.product-quantity-selector:focus {
   outline: none;
 }
 
 .added-to-cart-indicator-container {
   height: 11px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .added-to-cart-indicator {
   font-size: 11px;
+  font-weight: 500;
   margin: 0;
-  color: #929292;
+  color: #414141;
   display: none;
 }
 

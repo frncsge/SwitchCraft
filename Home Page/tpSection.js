@@ -3,6 +3,7 @@
 import { tpProducts } from "./tp-products.js";
 
 // localStorage.removeItem("favorites_idArr");
+// localStorage.removeItem("cart_idArr");
 
 const topPicksProductsContainer = $("#top-picks-products-container");
 let favorites_id = JSON.parse(localStorage.getItem("favorites_idArr")) || [];
@@ -30,7 +31,7 @@ tpProducts.forEach(function (product) {
           </div>
           <div class="quantity-favorites-container">
            <div class="product-quantity-selector-container">
-            <select class="product-quality-selector">
+            <select class="product-quantity-selector">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -75,10 +76,12 @@ tpProducts.forEach(function (product) {
 //   // window.location.href = `/trial.html?id=${productId}`;
 // });
 
+//makes the added to favorites products have their red hearts icon when page loads
 favorites_id.forEach(function (favorites_id) {
   $(`[data-id="${favorites_id}"] .style_icon__KAdjP`).attr("fill", "red");
 });
 
+//used event delegation to make the heart icon clickable
 topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
   const favoriteProductId = $(this).closest(".product-card").data("id");
 
@@ -92,6 +95,58 @@ topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
     favorites_id.unshift(favoriteProductId);
   }
 
-  console.log(favorites_id);
   localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
+});
+
+//getting the products inside the cart local storage
+let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
+
+//event delegation to target the add to cart button
+topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
+  const product_id = $(this).closest(".product-card").data("id");
+  const product_qty = parseInt(
+    $(this).closest(".product-card").find(".product-quantity-selector").val()
+  );
+
+  console.log(typeof product_qty);
+
+  let product = { id: product_id, qty: product_qty };
+
+  //this makes the added to cart indicator visible and fades out after.
+  const added_to_cart = $(this)
+    .closest(".product-card")
+    .find(".added-to-cart-indicator");
+
+  added_to_cart.css("display", "block");
+
+  //this makes the added to cart indicator visible and fades out after
+  setTimeout(() => {
+    added_to_cart.css("display", "none");
+  }, 1700);
+
+  function cart_obj_maker(p_id, p_qty) {
+    //p_id stands for product id and p_qty for product quantity
+    return {
+      id: p_id,
+      qty: p_qty,
+      price: null,
+      ship_cost: 0, //zero means the cost of the shipping
+      ship_days: 7,
+      checkout_date: null,
+      delivery_date: null, //gets the current date when a product gets added to the cart
+    };
+  }
+
+  function check_duplicate(cart_arr, product) {
+    let p_exists = cart_arr.find((cart) => cart.id === product.id);
+    if (p_exists) {
+      p_exists.qty = p_exists.qty + product.qty;
+    } else {
+      cart_id_qty.unshift(cart_obj_maker(product_id, product_qty));
+    }
+  }
+
+  check_duplicate(cart_id_qty, product);
+
+  localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
 });
