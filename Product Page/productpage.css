@@ -8,16 +8,17 @@
   display: grid;
   width: 80%;
   max-width: 1584px;
-  grid-template-columns: 700px 1fr;
-  gap: 20px;
+  grid-template-columns: 450px 1fr;
+  gap: 50px;
 }
 
 #product-img {
-  width: 700px;
+  width: 450px;
   aspect-ratio: 1 / 1;
 }
 
 #product-name {
+  font-size: 30px;
   font-weight: 600;
   margin: 0;
   margin-bottom: 8px;
@@ -89,4 +90,109 @@
 
 .style_icon__KAdjP {
   cursor: pointer;
+}
+
+#product-description-feature-container {
+  margin-bottom: 10px;
+}
+
+.line-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#product-feature-ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+#read-more-btn {
+  background-color: #dadada;
+  border: none;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#read-more-btn:hover {
+  background-color: #c9c9c9;
+}
+
+#about-this-item-title-text {
+  margin: 0;
+}
+
+@media (max-width: 1235px) {
+  #product-grid {
+    grid-template-columns: 400px 1fr;
+  }
+  #product-img {
+    width: 400px;
+  }
+  #product-name {
+    font-size: 28px;
+  }
+  #product-price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1003px) {
+  #product-grid-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #product-grid {
+    width: 100%;
+    grid-template-columns: 350px 1fr;
+  }
+  #product-img {
+    width: 350px;
+  }
+  #product-name {
+    font-size: 24px;
+  }
+  #product-price {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  #product-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 10px;
+  }
+  #product-img {
+    width: 280px;
+  }
+  #product-name {
+    font-size: 20px;
+  }
+  #product-rating-sold-review-container > p,
+  #quantity-title-text {
+    font-size: 15px;
+  }
+  #product-price {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  #product-grid-container {
+    margin-top: 10px;
+  }
+  #product-grid {
+    grid-template-columns: 1fr;
+  }
+  #product-img {
+    width: 100%;
+  }
+  #add-to-cart-btn {
+    width: 100%;
+  }
 }
