@@ -314,8 +314,9 @@ cart_grid_container.on("click", "#place-order-btn", function () {
   }, {});
 
   //this removes all item in the cart after placing the order
-  cart_id_qty.length = 0;
+  localStorage.removeItem("cart_idArr");
 
   localStorage.setItem("orders_by_date", JSON.stringify(product_orders));
-  console.log(cart_id_qty);
+
+  window.location.href = "/Home Page/index.html";
 });
