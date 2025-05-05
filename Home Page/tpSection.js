@@ -71,10 +71,10 @@ tpProducts.forEach(function (product) {
 });
 
 //event delegation para ma target ang mga product cards inside the top picks products container
-// $("#top-picks-products-container").on("click", ".product-card", function () {
-//   const productId = $(this).data("id"); //kuhaon ang data-id sa clicked product
-//   // window.location.href = `/trial.html?id=${productId}`;
-// });
+$("#top-picks-products-container").on("click", ".product-card", function () {
+  const productId = $(this).data("id"); //kuhaon ang data-id sa clicked product
+  window.location.href = `/Product Page/productpage.html?id=${productId}`;
+});
 
 //makes the added to favorites products have their red hearts icon when page loads
 favorites_id.forEach(function (favorites_id) {
@@ -82,7 +82,8 @@ favorites_id.forEach(function (favorites_id) {
 });
 
 //used event delegation to make the heart icon clickable
-topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
+topPicksProductsContainer.on("click", ".style_icon__KAdjP", function (event) {
+  event.stopPropagation();
   const favoriteProductId = $(this).closest(".product-card").data("id");
 
   if ($(this).attr("fill") === "red") {
@@ -98,11 +99,20 @@ topPicksProductsContainer.on("click", ".style_icon__KAdjP", function () {
   localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
 });
 
+topPicksProductsContainer.on(
+  "click",
+  ".product-quantity-selector",
+  function (event) {
+    event.stopPropagation();
+  }
+);
+
 //getting the products inside the cart local storage
 let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 //event delegation to target the add to cart button
-topPicksProductsContainer.on("click", ".add-to-cart-button", function () {
+topPicksProductsContainer.on("click", ".add-to-cart-button", function (event) {
+  event.stopPropagation();
   const product_id = $(this).closest(".product-card").data("id");
   const product_qty = parseInt(
     $(this).closest(".product-card").find(".product-quantity-selector").val()

@@ -293,7 +293,7 @@ html {
 #small-screen-nav-container {
   position: fixed;
   height: 100%;
-  background-color: #693382;
+  background-color: #a0c334;
   right: 0;
   z-index: 4;
   width: 30%;
@@ -307,7 +307,7 @@ html {
 }
 
 .small-nav-icon-container {
-  background-color: #693382;
+  background-color: #a0c334;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -317,7 +317,7 @@ html {
 }
 
 .small-nav-icon-container:hover {
-  background-color: #8d3fb1;
+  background-color: #7ea509;
 }
 
 .small-nav-icon {

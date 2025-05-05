@@ -1,6 +1,7 @@
 const bannerImages = {
   1: "/banner images/keyboard sale - switchCraft.png",
   2: "/banner images/switch sale - switchCraft.png",
+  3: "/banner images/Banner Image.png",
 };
 
 const dot = $(".dot");
@@ -18,7 +19,7 @@ function bannerImgSelector(selectedDot) {
       bannerImg.attr("src", bannerImages[2]);
       break;
     case "3":
-      bannerImg.attr("src", bannerImages[1]);
+      bannerImg.attr("src", bannerImages[3]);
       break;
   }
 }

@@ -290,3 +290,34 @@ cart_card_container.on("click", ".remove-btn", function () {
 //here starts the JS for the order summaryyyyyyy HOOO hahahaha
 
 update_order_summary();
+
+function get_curr_date() {
+  var curr_date_format = { year: "numeric", month: "long", day: "numeric" };
+  var curr_date = new Date();
+
+  return curr_date.toLocaleDateString("en-US", curr_date_format);
+}
+
+cart_grid_container.on("click", "#place-order-btn", function () {
+  // const order_placed_date = get_curr_date();
+  cart_id_qty.forEach((product) => (product.checkout_date = get_curr_date()));
+
+  const product_orders = cart_id_qty.reduce((acc, cv) => {
+    const { checkout_date } = cv;
+
+    if (!acc[checkout_date]) {
+      acc[checkout_date] = [];
+    }
+
+    acc[checkout_date].push(cv);
+    return acc;
+  }, {});
+
+  //this removes all item in the cart after placing the order
+  localStorage.removeItem("cart_idArr");
+
+  console.log(product_orders);
+  localStorage.setItem("orders_by_date", JSON.stringify(product_orders));
+
+  window.location.href = "/Orders Page/orders.html";
+});
