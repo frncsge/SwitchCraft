@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Switch Craft Store Locations</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+
+  <!-- Navigation Bar -->
+  <nav id="navbar"></nav>
+
+  <!-- Store Locations Section -->
+  <section style="padding: 40px; background-color: #f5f5f5;">
+    <div style="max-width: 1000px; margin: auto; text-align: center;">
+      <h2 style="font-size: 28px; margin-bottom: 20px;">Store Locations</h2>
+      <p>We currently have 3 stores located in Bohol, Philippines with friendly staffs that are always ready to help your needs!<br>
+      It is located in Tagbilaran, Carmen, and Guindulman.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.3009212593183!2d123.86706127292776!3d9.655308478875247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4c30923688e3%3A0xbf744e652643049b!2sIsland%20City%20Mall!5e0!3m2!1sen!2sph!4v1745756867663!5m2!1sen!2sph"
+        width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <div style="max-width: 400px; text-align: left;">
+        <h3 style="margin-bottom: 10px;">Island City Mall</h3>
+        <p><strong>Address:</strong> Rajah Sikatuna Ave, Tagbilaran City, Bohol</p>
+        <p><strong>Phone:</strong> (038) 501 3000</p>
+        <p><strong>Website:</strong> <a href="https://icmbohol.com" target="_blank">icmbohol.com</a></p>
+        <a href="https://www.google.com/maps?q=Island+City+Mall+Bohol" target="_blank" 
+          style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #FDD835; color: black; text-decoration: none; font-weight: bold;">
+          View on Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer style="background-color: #6A1B9A; padding: 40px; color: white;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>Customer Service</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Cancellation Policy</li>
+        <li>Delivery</li>
+        <li>Order and Payments</li>
+        <li>Payment FAQs</li>
+        <li>Return and Refund</li>
+        <li>Terms and Conditions</li>
+        <li>Service Area Coverage</li>
+        <li>Warranty Information</li>
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>Learn</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Our Story</li>
+        <li>Where we supply our products</li>
+        <li>Who are the students that made this website?</li>
+        <li>How is this project being submitted to?</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>Site Links</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>About us</li>
+        <li>Contact us</li>
+        <li>Location</li>
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>Follow Us</h4>
+      <p style="font-size: 20px;">
+        📘 📷 🟢
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <!-- JS for Nav and Footer Components -->
+  <script>
+    fetch("/Nav and footer components/navigationBar.html")
+      .then((x) => x.text())
+      .then((y) => {
+        document.getElementById("navbar").innerHTML = y;
+        const script = document.createElement("script");
+        const jquery = document.createElement("script");
+
+        jquery.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+        script.src = "/Nav and footer components/navbar.js";
+
+        document.body.appendChild(jquery);
+        document.body.appendChild(script);
+      });
+
+    fetch("/Nav and footer components/footer.html")
+      .then((x) => x.text())
+      .then((y) => (document.getElementById("footer").innerHTML = y));
+  </script>
+</body>
+</html>
