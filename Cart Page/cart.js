@@ -316,7 +316,8 @@ cart_grid_container.on("click", "#place-order-btn", function () {
   //this removes all item in the cart after placing the order
   localStorage.removeItem("cart_idArr");
 
+  console.log(product_orders);
   localStorage.setItem("orders_by_date", JSON.stringify(product_orders));
 
-  window.location.href = "/Home Page/index.html";
+  window.location.href = "/Orders Page/orders.html";
 });

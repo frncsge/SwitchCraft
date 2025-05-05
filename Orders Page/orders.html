@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Orders Page/orders.css" />
+    <title>My Orders</title>
+  </head>
+  <body>
+    <nav id="small-screen-navbar"></nav>
+    <nav id="navbar"></nav>
+    <div id="orders-home-and-page-name-outer-container">
+      <div id="orders-home-and-page-name-contianer">
+        <a id="orders-home-button" href="/Home Page/index.html"><p>Home</p></a>
+        <p id="orders-page-name">My Orders</p>
+      </div>
+    </div>
+    <h2 id="page-name">My Orders</h2>
+    <div id="no-orders-text-section">
+      <div id="no-orders-text-container">
+        <h1>You haven't bought an item yet :/</h1>
+      </div>
+    </div>
+    <!-- Orders html start belowskie -->
+    <main id="orders-card-container"></main>
+    <footer id="footer"></footer>
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("navbar").innerHTML = y;
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((x) => x.text())
+        .then((y) => (document.getElementById("footer").innerHTML = y));
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="/Orders Page/orders.js"></script>
+  </body>
+</html>
