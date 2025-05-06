@@ -2,7 +2,8 @@ import { tpProducts } from "../Home Page/tp-products.js";
 const product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
 
 $(document).ready(function () {
-  //   localStorage.removeItem("orders_by_date");
+  //
+  // localStorage.removeItem("orders_by_date");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");
@@ -45,6 +46,7 @@ $(document).ready(function () {
 
         const price = order.price;
         const qty = order.qty;
+        const ship_cost = order.ship_cost;
 
         total_cost += price * qty;
         total_cost_string = total_cost.toLocaleString();
