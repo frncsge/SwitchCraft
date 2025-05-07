@@ -55,7 +55,7 @@ a {
 
 #orders-card-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   margin-top: 20px;
 }
@@ -189,4 +189,8 @@ a {
   .product-info-grid {
     grid-template-columns: 1fr;
   }
+}
+
+button {
+  cursor: pointer;
 }

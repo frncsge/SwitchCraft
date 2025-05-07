@@ -1,9 +1,9 @@
 import { tpProducts } from "../Home Page/tp-products.js";
-const product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
+let product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
 let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 $(document).ready(function () {
-  // localStorage.removeItem("orders_by_date");
+  //localStorage.removeItem("orders_by_date");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");
@@ -116,10 +116,10 @@ $(document).ready(function () {
           };
         }
 
-        function check_duplicate(cart_arr, product) {
-          let p_exists = cart_arr.find((cart) => cart.id === product.id);
+        function check_duplicate(cart_arr, { id, qty }) {
+          let p_exists = cart_arr.find((cart) => cart.id === id);
           if (p_exists) {
-            p_exists.qty = p_exists.qty + product.qty;
+            p_exists.qty = p_exists.qty + qty;
           } else {
             cart_id_qty.unshift(cart_obj_maker(data_id, 1));
           }
@@ -127,6 +127,11 @@ $(document).ready(function () {
 
         check_duplicate(cart_id_qty, product);
         localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
+      });
+
+      orders_product_container.on("click", ".track-order-btn", function () {
+        const product_id = $(this).closest(".product-grid").data("id");
+        window.location.href = `/Track Order Page/track.html?id=${product_id}`;
       });
     }
   }
