@@ -149,6 +149,9 @@ topPicksProductsContainer.on("click", ".add-to-cart-button", function (event) {
 
   function check_duplicate(cart_arr, product) {
     let p_exists = cart_arr.find((cart) => cart.id === product.id);
+
+    console.log(p_exists);
+    console.log(cart_arr);
     if (p_exists) {
       p_exists.qty = p_exists.qty + product.qty;
     } else {
