@@ -1,8 +1,9 @@
 import { tpProducts } from "../Home Page/tp-products.js";
 const product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
+let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 $(document).ready(function () {
-  //   localStorage.removeItem("orders_by_date");
+  // localStorage.removeItem("orders_by_date");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");
@@ -49,7 +50,7 @@ $(document).ready(function () {
         total_cost += price * qty;
         total_cost_string = total_cost.toLocaleString();
 
-        const product_grid = `<div class="product-grid">
+        const product_grid = `<div class="product-grid" data-id="${order.id}">
                 <img
                   class="product-img"
                   src="${tpProducts[index].img}"
@@ -82,9 +83,51 @@ $(document).ready(function () {
               </div>`;
 
         orders_card.append(product_grid);
+        console.log("id " + order.id);
       });
 
       orders_card.find(".total-amount").text(`Php ${total_cost_string}`);
+
+      const orders_product_container = $(".product-grid");
+
+      orders_product_container.on("click", ".buy-again-btn", function () {
+        const data_id = $(this).closest(".product-grid").data("id");
+
+        const product = { id: data_id, qty: 1 };
+
+        $(this).css("width", "130px");
+        $(this).html("Added to Cart");
+
+        setTimeout(() => {
+          $(this).css("width", "110px");
+          $(this).html("Buy Again");
+        }, 1700);
+
+        function cart_obj_maker(p_id, p_qty) {
+          //p_id stands for product id and p_qty for product quantity
+          return {
+            id: p_id,
+            qty: p_qty,
+            price: null,
+            ship_cost: 0, //zero means the cost of the shipping
+            ship_days: 7,
+            checkout_date: null,
+            delivery_date: null, //gets the current date when a product gets added to the cart
+          };
+        }
+
+        function check_duplicate(cart_arr, product) {
+          let p_exists = cart_arr.find((cart) => cart.id === product.id);
+          if (p_exists) {
+            p_exists.qty = p_exists.qty + product.qty;
+          } else {
+            cart_id_qty.unshift(cart_obj_maker(data_id, 1));
+          }
+        }
+
+        check_duplicate(cart_id_qty, product);
+        localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty)); //stores the cart_id_qty using localStorage
+      });
     }
   }
 });
