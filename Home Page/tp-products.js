@@ -77,7 +77,7 @@ export const tpProducts = [
     reviews: [
       {
         reviewer: "Herro T.",
-        feedback: "nice keyboard",
+        feedback: "it ok",
       },
     ],
     description:
@@ -168,7 +168,7 @@ export const tpProducts = [
     price: "2,495",
     rating: 4.9,
     sold: 43,
-    reviewCount: 2,
+    reviewCount: 4,
     reviews: [
       {
         reviewer: "Anonymous",
@@ -177,6 +177,14 @@ export const tpProducts = [
       {
         reviewer: "Anonymous",
         feedback: "Poya type oy huhu",
+      },
+      {
+        reviewer: "Vhong N.",
+        feedback: "Plus aim sa valo bro nice",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Budget keyboard very nice",
       },
     ],
     description:

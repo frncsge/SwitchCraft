@@ -32,7 +32,7 @@ const product_display = `<img
               ${product.rating}
             </p>
             <p id="product-sold">${product.sold} Sold</p>
-            <p id="product-review-count">2 Reviews</p>
+            <p id="product-review-count">${product.reviewCount} Reviews</p>
           </div>
           <div id="product-price-favorite-btn-container">
             <h2 id="product-price">Php ${product.price}</h2>
@@ -163,4 +163,31 @@ grid.on("click", "#add-to-cart-btn", function () {
   check_duplicate(cart_id_qty, product);
 
   localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
+});
+
+// comment section JS here
+
+product.reviews.forEach((review) => {
+  console.log(review);
+  const comment_card = `<div class="comment-card">
+          <div class="photo-user-container">
+            <img
+              class="profile-pic"
+              src="/Product Page/Anonymous-Profile-pic.jpg"
+              alt="Profile picture"
+            />
+            <div class="star-name-container">
+              <img
+                class="star-img"
+                src="/Home Page/5-star image.png"
+                alt="Rating"
+              />
+              <p class="user-name">${review.reviewer}</p>
+            </div>
+          </div>
+          <p class="comment">${review.feedback}</p>
+          <hr />
+        </div>`;
+
+  $("#comment-container").append(comment_card);
 });

@@ -76,11 +76,17 @@ if (favorites_display.length !== 0) {
   $("#no-favorites-text-section").css("display", "flex");
 }
 
+grid.on("click", ".product-card", function () {
+  const productId = $(this).data("id"); //kuhaon ang data-id sa clicked product
+  window.location.href = `/Product Page/productpage.html?id=${productId}`;
+});
+
 favorites_id.forEach(function (favProductId) {
   $(`[data-id="${favProductId}"] .style_icon__KAdjP`).attr("fill", "red");
 });
 
-grid.on("click", ".style_icon__KAdjP", function () {
+grid.on("click", ".style_icon__KAdjP", function (event) {
+  event.stopPropagation();
   var favoriteProductId = $(this).closest(".product-card").data("id");
   var product_card = $(this).closest(".product-card");
 
@@ -103,12 +109,17 @@ grid.on("click", ".style_icon__KAdjP", function () {
   localStorage.setItem("favorites_idArr", JSON.stringify(favorites_id));
 });
 
+grid.on("click", ".product-quality-selector", function (event) {
+  event.stopPropagation();
+});
+
 //getting the products inside the cart local storage
 const favorite_products_grid = $("#favorite-products-grid");
 let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 //event delegation to target the add to cart button
-favorite_products_grid.on("click", ".add-to-cart-button", function () {
+favorite_products_grid.on("click", ".add-to-cart-button", function (event) {
+  event.stopPropagation();
   const product_id = $(this).closest(".product-card").data("id");
   const product_qty = parseInt(
     $(this).closest(".product-card").find(".product-quality-selector").val()

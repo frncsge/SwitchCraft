@@ -43,6 +43,14 @@ function update_shipping_option_date() {
     .html(string_date(3));
 }
 
+function updateCheckoutCount() {
+  const item_count = item_counter();
+
+  item_count > 1
+    ? $("#checkout-count").html(`Checkout ${item_count} items:`)
+    : $("#checkout-count").html(`Checkout ${item_count} item:`);
+}
+
 function update_order_summary() {
   cart_id_qty.length > 1
     ? $("#total-items-text").html(`Total items: ${cart_id_qty.length}`)
@@ -94,11 +102,10 @@ if (cart_id_qty.length === 0) {
 
     cart_id_qty[i].price = int_price;
 
-    const item_count = item_counter();
+    let display_price_string =
+      int_price * cart_id_qty[i].qty + cart_id_qty[i].ship_cost;
 
-    item_count > 1
-      ? $("#checkout-count").html(`Checkout ${item_count} items:`)
-      : $("#checkout-count").html(`Checkout ${item_count} item:`);
+    updateCheckoutCount();
 
     const cart_card = `<div class="cart-item-card" data-id="${cart_product.id}">
               <h3 class="delivery-date">Delivery date: ${display_delivery_date}</h3>
@@ -202,8 +209,6 @@ cart_card_container.on("change", ".product-shipping-option-radio", function () {
     .find(".delivery-date")
     .html(`Delivery date: ${display_delivery_date}`);
 
-  console.log(cart_id_qty);
-
   update_order_summary();
 
   localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
@@ -256,13 +261,14 @@ cart_card_container.on("click", ".update-btn", function () {
       .html(`Quantity: ${cart_id_qty[i].qty}`);
 
     $(this).html("UPDATE");
+    updateCheckoutCount();
     console.log(cart_id_qty);
     localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
   }
 
   update_order_summary();
 
-  console.log(i);
+  console.log(cart_id_qty);
 });
 
 cart_card_container.on("click", ".remove-btn", function () {
@@ -283,6 +289,7 @@ cart_card_container.on("click", ".remove-btn", function () {
   console.log("index " + i);
 
   update_order_summary();
+  updateCheckoutCount();
 
   localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
 });
@@ -290,6 +297,7 @@ cart_card_container.on("click", ".remove-btn", function () {
 //here starts the JS for the order summaryyyyyyy HOOO hahahaha
 
 update_order_summary();
+updateCheckoutCount();
 
 function get_curr_date() {
   var curr_date_format = { year: "numeric", month: "long", day: "numeric" };
@@ -313,11 +321,23 @@ cart_grid_container.on("click", "#place-order-btn", function () {
     return acc;
   }, {});
 
-  //this removes all item in the cart after placing the order
+  localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
+  const cartStorageBackUp = localStorage.getItem("cart_idArr");
+  localStorage.setItem("trackOrderStorage", cartStorageBackUp);
+
   localStorage.removeItem("cart_idArr");
 
-  console.log(product_orders);
-  localStorage.setItem("orders_by_date", JSON.stringify(product_orders));
+  const existingOrders =
+    JSON.parse(localStorage.getItem("orders_by_date")) || {};
+
+  for (const date in product_orders) {
+    if (!existingOrders[date]) {
+      existingOrders[date] = [];
+    }
+    existingOrders[date] = existingOrders[date].concat(product_orders[date]);
+  }
+
+  localStorage.setItem("orders_by_date", JSON.stringify(existingOrders));
 
   window.location.href = "/Orders Page/orders.html";
 });
