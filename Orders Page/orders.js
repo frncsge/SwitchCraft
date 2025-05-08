@@ -3,7 +3,7 @@ let product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
 let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 $(document).ready(function () {
-  //localStorage.removeItem("orders_by_date");
+  // localStorage.removeItem("orders_by_date");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");
