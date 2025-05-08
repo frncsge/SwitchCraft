@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Location Page/location.css" />
+    <title>Location Page</title>
+  </head>
+  <body>
+    <nav id="small-screen-navbar"></nav>
+    <nav id="navbar"></nav>
+    <div id="location-home-and-page-name-outer-container">
+      <div id="location-home-and-page-name-contianer">
+        <a id="location-home-button" href="/Home Page/index.html"
+          ><p>Home</p></a
+        >
+        <p id="location-page-name">Store Location</p>
+      </div>
+    </div>
+    <h2 id="page-name">Store Location</h2>
+    <main id="location-container">
+      <div id="map-outer-container">
+        <div id="map-container">
+          <p id="intro">
+            We currently have a physical store located in
+            <span>
+              Janssen Heights, 6300 J.A. Clarin St, Tagbilaran City, Bohol,
+              Philippines.
+            </span>
+            <br />
+            Come visit our store, meet our friendly staffs, and checkout our
+            awesome items!
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1050.9682438858765!2d123.86653968458904!3d9.651088486513126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4c346a515c51%3A0xb74ab2ca59a780d5!2sHoly%20Name%20University!5e0!3m2!1sen!2sph!4v1746678859433!5m2!1sen!2sph"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div id="map-btn-container">
+            <button id="map-btn">
+              <a
+                href="https://www.google.com/maps/place/Holy+Name+University/@9.6510885,123.8665397,18.9z/data=!4m6!3m5!1s0x33aa4c346a515c51:0xb74ab2ca59a780d5!8m2!3d9.6502514!4d123.8682026!16s%2Fm%2F026hg96?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D"
+                >View on Google Maps</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script>
+      fetch("/Nav and footer components/navigationBar.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("navbar").innerHTML = y;
+          const script = document.createElement("script");
+          const jquery = document.createElement("script");
+
+          jquery.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+          script.src = "/Nav and footer components/navbar.js";
+
+          document.body.appendChild(jquery);
+          document.body.appendChild(script);
+        });
+
+      fetch("/Nav and footer components/smallScreenNav.html")
+        .then((x) => x.text())
+        .then((y) => {
+          document.getElementById("small-screen-navbar").innerHTML = y;
+        });
+
+      fetch("/Nav and footer components/footer.html")
+        .then((x) => x.text())
+        .then((y) => (document.getElementById("footer").innerHTML = y));
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>
