@@ -2,7 +2,7 @@ import { tpProducts } from "../Home Page/tp-products.js";
 let track_order_storage =
   JSON.parse(localStorage.getItem("trackOrderStorage")) || [];
 
-//localStorage.removeItem("trackOrderStorage");
+// localStorage.removeItem("trackOrderStorage");
 
 let query_string = window.location.search;
 let params = new URLSearchParams(query_string);

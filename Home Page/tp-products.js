@@ -267,4 +267,180 @@ export const tpProducts = [
       "Software Support – Fine-tune performance and lighting through powerful configuration software.",
     ],
   },
+  {
+    id: "wooting60he",
+    class: "keyboard",
+    img: "/Home Page/product img/wooting.jpg",
+    name: "WOOTING 60HE+60% Game Quick Trigger Keyboad Wired Magnetic Switch Gaming Keyboard",
+    price: "18,200",
+    rating: 5.0,
+    sold: 10,
+    reviewCount: 4,
+    reviews: [
+      {
+        reviewer: "Jelo S.",
+        feedback: "Insane actuation speed 🔥 love this keyboard!",
+      },
+      {
+        reviewer: "Kurt P.",
+        feedback: "Perfect for FPS games, feels super responsive!",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Pricey but worth it, the smoothness is unreal.",
+      },
+      {
+        reviewer: "J.M.",
+        feedback: "Ganda ng rapid trigger, sulit for Valorant.",
+      },
+    ],
+    description:
+      "The Wooting 60HE – a high-performance 60% mechanical keyboard built for competitive gaming and lightning-fast response. Featuring Rapid Trigger technology, analog Hall Effect switches, and a minimal compact design, the 60HE is engineered for serious gamers who demand precision and speed.",
+    features: [
+      "60% Layout – Ultra-compact form factor that frees up desk space while retaining core functionality.",
+      "Hall Effect Switches – Analog magnetic switches for ultra-precise input and smooth keypress control.",
+      "Rapid Trigger – Instantly actuate and reset keys without needing full release, ideal for fast-paced gameplay.",
+      "Customizable Actuation – Adjust actuation points per key to match your playstyle and typing preference.",
+      "Low Latency – Engineered for ultra-fast response times, reducing input delay to the bare minimum.",
+      "Hot-Swappable – Easily swap out switches without soldering for maximum customization.",
+      "RGB Lighting – Per-key customizable lighting effects for a dynamic and personalized look.",
+      "Detachable USB-C – Reliable wired connection with easy portability and clean cable management.",
+      "Software Support – Fine-tune performance and lighting through powerful configuration software.",
+    ],
+  },
+  {
+    id: "akko",
+    class: "keyboard",
+    img: "/Home Page/product img/akko.webp",
+    name: "AKKO World Tour-Tokyo R1 3087 Mechanical Keyboard",
+    price: "3,495",
+    rating: 4.8,
+    sold: 15,
+    reviewCount: 5,
+    reviews: [
+      {
+        reviewer: "Aya M.",
+        feedback:
+          "Aesthetic overload 😍 every keycap feels like a piece of art!",
+      },
+      {
+        reviewer: "Kenji L.",
+        feedback:
+          "Solid build, smooth keystrokes, and the Tokyo theme is chef’s kiss.",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Super cute keyboard, makes typing way more fun!",
+      },
+      {
+        reviewer: "R.A.",
+        feedback: "Love the PBT keycaps and the Japanese vibes — 10/10 design!",
+      },
+      {
+        reviewer: "Marco G.",
+        feedback:
+          "Perfect mix of form and function. Great for work and anime fans alike!",
+      },
+    ],
+    description:
+      "The AKKO World Tour-Tokyo R1 3087 is a beautifully themed mechanical keyboard inspired by the vibrant culture and colors of Tokyo. Designed with a focus on aesthetics and typing comfort, this 87-key tenkeyless keyboard features high-quality PBT keycaps, stunning dye-sub printing, and smooth mechanical switches – perfect for both collectors and daily users.",
+    features: [
+      "87-Key TKL Layout – Compact tenkeyless design that saves space without sacrificing functionality.",
+      "Tokyo-Themed Design – Unique World Tour Tokyo keycap set with Japanese cultural motifs and pastel accents.",
+      "PBT Keycaps – Durable, high-quality dye-sublimated keycaps that resist shine and fading over time.",
+      "Mechanical Switches – Available with various Akko switches for a satisfying and responsive typing experience.",
+      "Hot-Swappable – Easily swap out switches without soldering to customize your feel.",
+      "Programmable Keys – Customize key functions and macros via Akko’s software.",
+      "Adjustable Feet – Two-level angle adjustment for personalized ergonomics.",
+      "Multi-Platform Support – Compatible with Windows, Mac, and Linux systems.",
+      "Detachable USB-C Cable – Reliable wired connection with easy transport and clean setup.",
+    ],
+  },
+  {
+    id: "tecware",
+    class: "keyboard",
+    img: "/Home Page/product img/tecware.webp",
+    name: "Tecware Veil 80 75% Mechanical Keyboard (Gateron Brown Switch)",
+    price: "4,750",
+    rating: 5.0,
+    sold: 20,
+    reviewCount: 5,
+    reviews: [
+      {
+        reviewer: "Lance V.",
+        feedback:
+          "Super clean look, love the minimal aesthetic and build quality!",
+      },
+      {
+        reviewer: "Tina R.",
+        feedback:
+          "Smooth typing experience, and the gasket mount feels premium.",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "Affordable yet feels high-end. Honestly a hidden gem.",
+      },
+      {
+        reviewer: "Dex G.",
+        feedback:
+          "Love the sound profile – thocky and satisfying out of the box.",
+      },
+      {
+        reviewer: "C.J.",
+        feedback: "Great keyboard for modding. Layout and feel are on point!",
+      },
+    ],
+    description:
+      "The Tecware Veil 80 is a sleek and minimalist 80% mechanical keyboard designed for both enthusiasts and everyday users. With a gasket-mounted design, hot-swappable sockets, and a clean aesthetic, the Veil 80 delivers a premium typing experience at an accessible price point.",
+    features: [
+      "80% Layout – Compact layout with dedicated arrow keys and function row for efficient workflow.",
+      "Gasket Mount – Soft, flexible typing feel with improved acoustics and reduced vibration.",
+      "Hot-Swappable – Compatible with most 3/5-pin switches for easy customization without soldering.",
+      "Minimalist Design – Clean and modern look that fits seamlessly into any setup.",
+      "South-Facing RGB – Bright per-key lighting optimized for better keycap compatibility.",
+      "Sound-Dampening – Includes foam layers for a deeper, more refined sound profile.",
+      "Double-Shot Keycaps – Durable legends that won’t fade or wear over time.",
+      "Detachable USB-C – Convenient and portable with fast, stable wired connectivity.",
+      "Software Support – Configure lighting, macros, and key remapping with Tecware's intuitive software.",
+    ],
+  },
+  {
+    id: "qmkkeychron",
+    class: "keyboard",
+    img: "/Home Page/product img/qmk.webp",
+    name: "Keychron Q1 QMK Custom Mechanical Keyboard",
+    price: "9,300",
+    rating: 4.9,
+    sold: 11,
+    reviewCount: 3,
+    reviews: [
+      {
+        reviewer: "Emil D.",
+        feedback:
+          "The build is insanely solid—feels like a tank but types like a dream.",
+      },
+      {
+        reviewer: "Steph A.",
+        feedback:
+          "QMK/VIA support makes remapping a breeze. Love the flexibility!",
+      },
+      {
+        reviewer: "Anonymous",
+        feedback: "The sound and feel after tuning? Absolute endgame vibes.",
+      },
+    ],
+    description:
+      "The Keychron Q1 QMK is a premium 75% mechanical keyboard crafted for custom keyboard enthusiasts and productivity-focused users. Featuring a fully customizable QMK/VIA-compatible layout, an all-aluminum body, and a gasket-mounted structure, the Q1 offers unmatched flexibility and top-tier typing feel out of the box.",
+    features: [
+      "75% Layout – Compact layout with function row and arrow keys, balancing form and function.",
+      "QMK/VIA Support – Fully programmable keys and macros for advanced customization.",
+      "Gasket Mount Design – Soft, cushioned typing experience with excellent acoustic feedback.",
+      "CNC Aluminum Case – Robust and high-end build with a sleek, industrial look.",
+      "Hot-Swappable Sockets – Easily change switches without soldering for personalized feel.",
+      "South-Facing RGB – Compatible with a wide range of keycap profiles and offers vibrant backlighting.",
+      "Double-Gasket Structure – Reduces metal-on-metal contact for a quieter, more refined typing sound.",
+      "Sound-Dampening Foam – Pre-installed layers help improve acoustics and key feel.",
+      "Detachable USB-C – Reliable wired connection with easy portability and clean desk setup.",
+    ],
+  },
 ];
