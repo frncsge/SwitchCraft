@@ -1,22 +1,27 @@
 import { tpProducts } from "../Home Page/tp-products.js";
-let product_orders = JSON.parse(localStorage.getItem("orders_by_date")) || {};
+const product_orders = JSON.parse(localStorage.getItem("orders_by_id")) || {};
 let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 
 $(document).ready(function () {
-  // localStorage.removeItem("orders_by_date");
+  // localStorage.removeItem("orders_by_id");
+  // localStorage.removeItem("uniqueId");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");
   } else {
     $("#no-orders-text-section").css("display", "none");
-    for (let date in product_orders) {
+    console.log("huhay", product_orders);
+
+    for (let Oid in product_orders) {
+      console.log("huhay", product_orders);
+      console.log("Oid", Oid);
       const orders_card_container = $("#orders-card-container");
       const orders_card_grid = $(`<div class="orders-card">
               <div class="order-info-container">
                 <section class="left-order-info">
                   <div class="order-placed">
                     <h4>Order Placed:</h4>
-                    <p>${date}</p>
+                    <p>${product_orders[Oid][0].checkout_date}</p>
                   </div>
                   <div class="total">
                     <h4>Total:</h4>
@@ -26,20 +31,20 @@ $(document).ready(function () {
                 <section class="right-order-info">
                   <div class="order-id">
                     <h4>Order ID:</h4>
-                    <p>123adAEW123</p>
+                    <p>${Oid}fK2bX9q</p>
                   </div>
                 </section>
               </div>
               <hr />
             </div>`);
 
-      orders_card_container.append(orders_card_grid);
-      const orders_card = $(".orders-card");
+      orders_card_container.prepend(orders_card_grid);
+      const orders_card = orders_card_grid;
 
       let total_cost = 0;
       let total_cost_string;
 
-      product_orders[date].forEach((order) => {
+      product_orders[Oid].forEach((order) => {
         let index = tpProducts.findIndex(
           (tpProduct) => tpProduct.id === order.id
         );
@@ -83,7 +88,6 @@ $(document).ready(function () {
               </div>`;
 
         orders_card.append(product_grid);
-        console.log("id " + order.id);
       });
 
       orders_card.find(".total-amount").text(`Php ${total_cost_string}`);
@@ -106,6 +110,7 @@ $(document).ready(function () {
         function cart_obj_maker(p_id, p_qty) {
           //p_id stands for product id and p_qty for product quantity
           return {
+            order_id: null,
             id: p_id,
             qty: p_qty,
             price: null,
@@ -116,10 +121,10 @@ $(document).ready(function () {
           };
         }
 
-        function check_duplicate(cart_arr, { id, qty }) {
-          let p_exists = cart_arr.find((cart) => cart.id === id);
+        function check_duplicate(cart_arr, product) {
+          let p_exists = cart_arr.find((cart) => cart.id === product.id);
           if (p_exists) {
-            p_exists.qty = p_exists.qty + qty;
+            p_exists.qty = p_exists.qty + product.qty;
           } else {
             cart_id_qty.unshift(cart_obj_maker(data_id, 1));
           }

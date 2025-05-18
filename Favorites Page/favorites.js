@@ -144,6 +144,7 @@ favorite_products_grid.on("click", ".add-to-cart-button", function (event) {
   function cart_obj_maker(p_id, p_qty) {
     //p_id stands for product id and p_qty for product quantity
     return {
+      order_id: null,
       id: p_id,
       qty: p_qty,
       price: null,
