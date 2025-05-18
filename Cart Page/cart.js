@@ -306,38 +306,53 @@ function get_curr_date() {
   return curr_date.toLocaleDateString("en-US", curr_date_format);
 }
 
+let order_aydi = parseInt(localStorage.getItem("uniqueId")) || 1;
+
 cart_grid_container.on("click", "#place-order-btn", function () {
   // const order_placed_date = get_curr_date();
-  cart_id_qty.forEach((product) => (product.checkout_date = get_curr_date()));
+  cart_id_qty.forEach((product) => {
+    product.checkout_date = get_curr_date();
+    product.order_id = order_aydi;
+  });
+
+  order_aydi += 1;
 
   const product_orders = cart_id_qty.reduce((acc, cv) => {
-    const { checkout_date } = cv;
+    const { order_id } = cv;
 
-    if (!acc[checkout_date]) {
-      acc[checkout_date] = [];
+    if (!acc[order_id]) {
+      acc[order_id] = [];
     }
 
-    acc[checkout_date].push(cv);
+    acc[order_id].push(cv);
     return acc;
   }, {});
 
-  localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
-  const cartStorageBackUp = localStorage.getItem("cart_idArr");
-  localStorage.setItem("trackOrderStorage", cartStorageBackUp);
+  // localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
+  let cartStorageBackUp =
+    JSON.parse(localStorage.getItem("trackOrderStorage")) || [];
+  if (cartStorageBackUp.length === 0) {
+    cartStorageBackUp = cart_id_qty;
+  } else {
+    cartStorageBackUp = cartStorageBackUp.concat(cart_id_qty);
+  }
+  console.log("kulira", cart_id_qty);
+  console.log("pisti", cartStorageBackUp);
+  localStorage.setItem("trackOrderStorage", JSON.stringify(cartStorageBackUp));
+  localStorage.setItem("uniqueId", order_aydi);
 
   localStorage.removeItem("cart_idArr");
 
-  const existingOrders =
-    JSON.parse(localStorage.getItem("orders_by_date")) || {};
+  const existingOrders = JSON.parse(localStorage.getItem("orders_by_id")) || {};
 
-  for (const date in product_orders) {
-    if (!existingOrders[date]) {
-      existingOrders[date] = [];
+  for (const Oid in product_orders) {
+    if (!existingOrders[Oid]) {
+      existingOrders[Oid] = [];
     }
-    existingOrders[date] = existingOrders[date].concat(product_orders[date]);
+    existingOrders[Oid] = existingOrders[Oid].concat(product_orders[Oid]);
   }
 
-  localStorage.setItem("orders_by_date", JSON.stringify(existingOrders));
+  localStorage.setItem("orders_by_id", JSON.stringify(existingOrders));
 
-  window.location.href = "/Orders Page/orders.html";
+  // window.location.href = "/Orders Page/orders.html";
 });
