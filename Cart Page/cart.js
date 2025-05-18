@@ -328,9 +328,17 @@ cart_grid_container.on("click", "#place-order-btn", function () {
     return acc;
   }, {});
 
-  localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
-  const cartStorageBackUp = localStorage.getItem("cart_idArr");
-  localStorage.setItem("trackOrderStorage", cartStorageBackUp);
+  // localStorage.setItem("cart_idArr", JSON.stringify(cart_id_qty));
+  let cartStorageBackUp =
+    JSON.parse(localStorage.getItem("trackOrderStorage")) || [];
+  if (cartStorageBackUp.length === 0) {
+    cartStorageBackUp = cart_id_qty;
+  } else {
+    cartStorageBackUp = cartStorageBackUp.concat(cart_id_qty);
+  }
+  console.log("kulira", cart_id_qty);
+  console.log("pisti", cartStorageBackUp);
+  localStorage.setItem("trackOrderStorage", JSON.stringify(cartStorageBackUp));
   localStorage.setItem("uniqueId", order_aydi);
 
   localStorage.removeItem("cart_idArr");
@@ -346,5 +354,5 @@ cart_grid_container.on("click", "#place-order-btn", function () {
 
   localStorage.setItem("orders_by_id", JSON.stringify(existingOrders));
 
-  window.location.href = "/Orders Page/orders.html";
+  // window.location.href = "/Orders Page/orders.html";
 });

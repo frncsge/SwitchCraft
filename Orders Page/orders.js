@@ -5,6 +5,7 @@ let cart_id_qty = JSON.parse(localStorage.getItem("cart_idArr")) || [];
 $(document).ready(function () {
   // localStorage.removeItem("orders_by_id");
   // localStorage.removeItem("uniqueId");
+  // localStorage.removeItem("trackOrderStorage");
 
   if (Object.keys(product_orders).length === 0) {
     $("#no-orders-text-section").css("display", "flex");

@@ -4,6 +4,8 @@ let track_order_storage =
 
 // localStorage.removeItem("trackOrderStorage");
 
+console.log("yawa ba", track_order_storage);
+
 let query_string = window.location.search;
 let params = new URLSearchParams(query_string);
 let product_id = params.get("id");
