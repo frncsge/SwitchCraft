@@ -354,5 +354,5 @@ cart_grid_container.on("click", "#place-order-btn", function () {
 
   localStorage.setItem("orders_by_id", JSON.stringify(existingOrders));
 
-  // window.location.href = "/Orders Page/orders.html";
+  window.location.href = "/Orders Page/orders.html";
 });
