@@ -401,4 +401,9 @@ a {
   .shipping-option-text {
     font-size: 13px;
   }
+
+  .shipping-option-price,
+  .shipping-option-date {
+    font-size: 11px;
+  }
 }
