@@ -278,6 +278,9 @@ footer {
 }
 
 @media (max-width: 481px) {
+  #lower-nav-list-container {
+    gap: 20px;
+  }
   .lower-nav-list > a {
     font-size: 10px;
   }
