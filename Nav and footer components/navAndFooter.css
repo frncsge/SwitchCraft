@@ -277,15 +277,6 @@ footer {
   }
 }
 
-@media (max-width: 481px) {
-  #lower-nav-list-container {
-    gap: 20px;
-  }
-  .lower-nav-list > a {
-    font-size: 10px;
-  }
-}
-
 html {
   position: relative;
 }
@@ -337,4 +328,17 @@ html {
   color: #f7f7f7;
   font-size: 11px;
   font-weight: 500;
+}
+
+@media (max-width: 481px) {
+  #lower-nav-list-container {
+    gap: 20px;
+  }
+  .lower-nav-list > a {
+    font-size: 10px;
+  }
+
+  #small-screen-nav-container {
+    width: 50%;
+  }
 }
