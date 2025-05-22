@@ -277,6 +277,12 @@ footer {
   }
 }
 
+@media (max-width: 481px) {
+  .lower-nav-list > a {
+    font-size: 10px;
+  }
+}
+
 html {
   position: relative;
 }
